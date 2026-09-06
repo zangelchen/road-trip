@@ -14,6 +14,7 @@
   --routeC:#96501F; --routeC-soft:#F1E2D4;
   --routeD:#3F5486; --routeD-soft:#DCE2F0;
   --routeE:#6A4B93; --routeE-soft:#E6DEF2;
+  --routeF:#A8352F; --routeF-soft:#F5DEDA;
   --shadow:0 1px 2px rgba(22,27,24,.06), 0 8px 24px -14px rgba(22,27,24,.30);
 }
 @media (prefers-color-scheme: dark){
@@ -25,9 +26,11 @@
     --routeC:#DE9455; --routeC-soft:#33210F;
     --routeD:#93A8DC; --routeD-soft:#171D2E;
     --routeE:#B79BE0; --routeE-soft:#241B33;
+    --routeF:#EF8F80; --routeF-soft:#301917;
     --routeC:#DE9455; --routeC-soft:#33210F;
     --routeD:#93A8DC; --routeD-soft:#171D2E;
     --routeE:#B79BE0; --routeE-soft:#241B33;
+    --routeF:#EF8F80; --routeF-soft:#301917;
     --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 30px -16px rgba(0,0,0,.8);
   }
 }
@@ -39,6 +42,7 @@
   --routeC:#DE9455; --routeC-soft:#33210F;
   --routeD:#93A8DC; --routeD-soft:#171D2E;
   --routeE:#B79BE0; --routeE-soft:#241B33;
+  --routeF:#EF8F80; --routeF-soft:#301917;
   --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 30px -16px rgba(0,0,0,.8);
 }
 
@@ -231,6 +235,7 @@ body.locked .wrap{filter:blur(7px); pointer-events:none; user-select:none}
   padding:2px 6px; margin-left:8px; vertical-align:2px}
 
 /* ---------- chooser ---------- */
+.leadin.second{margin-top:54px}
 .leadin{margin:36px 0 0; padding-bottom:18px; border-bottom:1px solid var(--line)}
 .leadin h2{font-size:25px; font-weight:700; letter-spacing:-.015em; margin:0}
 .leadin p{margin:8px 0 0; color:var(--muted); max-width:62ch}
@@ -243,6 +248,7 @@ body.locked .wrap{filter:blur(7px); pointer-events:none; user-select:none}
 .optcard.a{--accent:var(--routeA)} .optcard.b{--accent:var(--routeB)}
 .optcard.catskills{--accent:var(--routeC)} .optcard.philadelphia{--accent:var(--routeD)}
 .optcard.home{--accent:var(--routeE)}
+.optcard.vermont{--accent:var(--routeF)}
 .optcard .onum{font-family:"DM Mono",monospace; font-size:10.5px; letter-spacing:.16em;
   text-transform:uppercase; color:var(--faint)}
 .optcard h3{display:flex; align-items:center; gap:8px; margin:9px 0 0; font-size:20px; font-weight:700; letter-spacing:-.01em; line-height:1.2}
@@ -289,6 +295,9 @@ body.locked .wrap{filter:blur(7px); pointer-events:none; user-select:none}
   letter-spacing:.06em; flex:1; min-width:150px}
 .stayrow a{font-family:"DM Mono",monospace; font-size:12px; color:var(--accent);
   text-decoration-thickness:1px; text-underline-offset:3px; white-space:nowrap}
+.stayrow.vt{flex-direction:column; align-items:flex-start; gap:6px; padding:16px 0}
+.stayrow.vt .amt{font-size:22px}
+.stayrow.vt .staynote{margin:6px 0 0; color:var(--muted); font-size:15px; max-width:64ch}
 .stays .caveat{margin:16px 0 0; padding-top:14px; border-top:1px solid var(--line);
   color:var(--muted); font-size:15px}
 .stays .caveat b{color:var(--ink); font-family:"Bricolage Grotesque",sans-serif; font-weight:700}
@@ -562,6 +571,23 @@ table.costs td.opt{font-family:"Bricolage Grotesque",sans-serif; font-size:15px;
       <div class="meta"><span>Base <b>Sat Sep 19</b></span><span>Driving <b>0 mi</b></span></div>
       <div class="badges"><span class="badge acc">&#128684; No car needed</span></div>
       <button data-route="home" data-version="vhome">View itinerary</button>
+    </div>
+  </div>
+
+  <div class="leadin second">
+    <h2>October &mdash; Columbus Day weekend</h2>
+    <p>A longer trip, further north, over the long weekend of October 9&ndash;12. Peak foliage
+    rather than early-season colour.</p>
+  </div>
+  <div class="chooser two">
+    <div class="optcard vermont">
+      <div class="onum">Vermont</div>
+      <h3>Woodstock &amp; Lake Willoughby</h3>
+      <div class="where">Route 100 &middot; Northeast Kingdom</div>
+      <p class="desc">Foliage + Gondola + Lake</p>
+      <div class="meta"><span>Dates <b>Oct 9&ndash;12</b></span><span>Nights <b>3</b></span></div>
+      <div class="badges"><span class="badge acc">&#127809; Four-day road trip</span></div>
+      <button data-route="vermont" data-version="vvt">View itinerary</button>
     </div>
   </div>
 </div>
@@ -1344,6 +1370,104 @@ table.costs td.opt{font-family:"Bricolage Grotesque",sans-serif; font-size:15px;
     <li class="star"><span class="t">All day</span><span class="w"><b>&#11088; Let&#39;s go blow some clouds</b></span></li>
   </ol>
 </div>
+</div>
+</section>
+
+<section class="route" id="route-vermont" role="tabpanel" style="--accent:var(--routeF)">
+<div class="routehead">
+  <button class="back">&#8592; All destinations</button>
+  <h2>Vermont</h2>
+  <span class="ctx">Fri Oct 9 &rarr; Mon Oct 12 &middot; three nights</span>
+</div>
+<div class="version vvt on">
+<div class="tripbody">
+  <div class="varhead">
+    <div class="vlab">Friday, October 9 &rarr; Monday, October 12</div>
+    <h3>Woodstock, Route 100 and Lake Willoughby</h3>
+    <p>Four days on two bases: one night near Woodstock, then two at Lake Willoughby, with the
+    Route 100 foliage drive and the Stowe gondola in between.</p>
+    <span class="badge acc">&#127809; Four-day road trip</span>
+  </div>
+  <div class="sidenote"><b>Take the Friday off if you can.</b> It is about five hours to
+  Woodstock before stops or traffic. Leaving at 3 or 4 PM means arriving late, eating, sleeping,
+  and having lost the day. Leaving at 9 AM turns Friday into a real first day &mdash; Vermont,
+  Woodstock, foliage, dinner &mdash; and lets Saturday be the big drive.</div>
+  <ol class="sched">
+      <li class="dayhead"><span class="d">Friday, October 9 &middot; Jersey City &rarr; Woodstock</span></li>
+      <li class="move"><span class="t">9:00 AM</span><span class="w"><b>Pick up the rental, leave Jersey City</b><span>Roughly five hours to Woodstock without stops.</span></span></li>
+      <li><span class="t">11:00 AM</span><span class="w"><b>Lunch on the way</b><span>Somewhere around the Hudson Valley or western Massachusetts. Keep it casual &mdash; the point is to reach Vermont with energy left.</span></span></li>
+      <li class="move"><span class="t">~2:30 PM</span><span class="w"><b>Cross into Vermont</b><span>Take the scenic approach rather than optimising for arrival time.</span></span></li>
+      <li class="star"><span class="t">3:30–4:30 PM</span><span class="w"><b>&#11088; Woodstock village</b><span>The green, Main Street, the Middle Covered Bridge, the shops, coffee or cider, and a walk along the Ottauquechee.</span></span></li>
+      <li><span class="t">4:30–5:30 PM</span><span class="w"><b>Marsh-Billings-Rockefeller</b><span>Right outside town, with carriage roads and viewpoints around Mount Tom and the Pogue. Forty-five minutes on the grounds is plenty &mdash; this is not the hike.</span></span></li>
+      <li class="move"><span class="t">5:30–6:30 PM</span><span class="w"><b>Check in</b></span></li>
+      <li><span class="t">7:00 PM</span><span class="w"><b>Dinner in Woodstock</b><span>Then nothing else. Walk the town, have a drink, go back. Saturday is the big day.</span></span></li>
+      <li class="dayhead"><span class="d">Saturday, October 10 &middot; Route 100 &rarr; Stowe &rarr; Lake Willoughby</span></li>
+      <li><span class="t">8:00 AM</span><span class="w"><b>Breakfast and check out</b><span>No need to be on the road at six.</span></span></li>
+      <li class="move"><span class="t">9:00 AM</span><span class="w"><b>Leave Woodstock, head north</b></span></li>
+      <li><span class="t">10:00 AM</span><span class="w"><b>Quechee and the Route 4 countryside</b><span>Worth a short stop. The gorge is a stop, not the centrepiece.</span></span></li>
+      <li class="star"><span class="t">11:00 AM</span><span class="w"><b>&#11088; Route 100 north</b><span>The backbone of the day: covered bridges, roadside pull-offs, farm stands, overlooks. Deliberately unscheduled &mdash; stop when something looks good.</span></span></li>
+      <li><span class="t">12:00–1:00 PM</span><span class="w"><b>Cold Hollow Cider Mill</b><span>Hot cider and cider donuts. Ben &amp; Jerry&#39;s is nearby and skippable; the day is full enough.</span></span></li>
+      <li><span class="t">1:00 PM</span><span class="w"><b>Waterbury</b><span>Quick walk, lunch, then on toward Stowe.</span></span></li>
+      <li class="star"><span class="t">2:00–4:00 PM</span><span class="w"><b>&#11088; Stowe Gondola SkyRide</b><span>The highlight. Give it a full two hours &mdash; up, the views, a wander round the summit, a snack, back down. Fall hours are typically 10:00 AM–4:30 PM with the last ticket around 4:15, weather permitting. Check the status that morning; the mountain can close while Stowe itself looks fine.</span></span></li>
+      <li class="move"><span class="t">4:00–5:15 PM</span><span class="w"><b>Smugglers&#39; Notch</b><span>Nothing scheduled here. The road is the attraction &mdash; stop when you see something.</span></span></li>
+      <li class="move"><span class="t">~5:15 PM</span><span class="w"><b>On toward Lake Willoughby</b><span>About 50 miles, roughly an hour and twenty.</span></span></li>
+      <li class="move"><span class="t">6:30–7:00 PM</span><span class="w"><b>Arrive at Lake Willoughby</b><span>Around sunset, which is the point of arriving now.</span></span></li>
+      <li><span class="t">Evening</span><span class="w"><b>Dinner in</b><span>Something simple at the house. Do not go back out.</span></span></li>
+      <li class="dayhead"><span class="d">Sunday, October 11 &middot; Lake Willoughby</span></li>
+      <li><span class="t">7:00 AM</span><span class="w"><b>Sunrise at the lake</b><span>Worth the alarm. The north beach faces well for it. Coffee, a walk, photos, then back for breakfast.</span></span></li>
+      <li><span class="t">9:00–11:00 AM</span><span class="w"><b>Route 5A around the lake</b><span>North Beach, South Beach, the overlooks along 5A. The lake runs five miles between Mount Hor and Mount Pisgah, with both rising straight out of the water.</span></span></li>
+      <li><span class="t">11:00 AM–1:00 PM</span><span class="w"><b>Optional: Mount Pisgah</b><span>Only if the weather is good and you want it. Skipping it costs you nothing &mdash; you already have the lake, the mountains and the colour.</span></span></li>
+      <li><span class="t">1:00 PM</span><span class="w"><b>Lunch locally</b><span>Not worth driving 45 minutes for a famous restaurant.</span></span></li>
+      <li class="move"><span class="t">2:00–5:00 PM</span><span class="w"><b>Northeast Kingdom drive &mdash; or not</b><span>Westmore, Barton, Orleans, Lake Memphremagog and back. If the colour around the lake is better than anything you would drive to, stay put.</span></span></li>
+      <li><span class="t">5:00 PM onward</span><span class="w"><b>Lake house evening</b><span>Cook, fire pit, sunset, stars. This is the part that makes it a trip rather than a checklist.</span></span></li>
+      <li class="dayhead"><span class="d">Monday, October 12 &middot; Home the other way</span></li>
+      <li><span class="t">8:00 AM</span><span class="w"><b>Breakfast and a last walk by the water</b></span></li>
+      <li class="move"><span class="t">9:00 AM</span><span class="w"><b>Check out</b></span></li>
+      <li class="move"><span class="t">Daytime</span><span class="w"><b>St. Johnsbury &rarr; New Hampshire &rarr; the White Mountains &rarr; western Massachusetts</b><span>A different landscape the whole way home, rather than retracing Stowe.</span></span></li>
+      <li><span class="t">Optional</span><span class="w"><b>Franconia Notch</b><span>If the weather holds, make this the one big final stop. If energy is low, drive. Do not add an attraction because it is on the map.</span></span></li>
+  </ol>
+</div>
+</div>
+
+<div class="tripbody">
+  <div class="stays">
+    <h4>Lodging</h4>
+    <p class="lede2">Three listings, with the trade-offs. Prices as quoted for these dates.</p>
+    <div class="stayrow vt">
+      <span class="amt">$90</span>
+      <span class="per">Fri Oct 9&ndash;10 &middot; Springhouse Cabin, Tunbridge</span>
+      <a href="https://www.airbnb.com/rooms/8582515?check_in=2026-10-09&amp;check_out=2026-10-10" target="_blank" rel="noopener">View on Airbnb &rarr;</a>
+      <p class="staynote">Cheap and charming &mdash; 4.9 from 319 reviews, Superhost. Two catches: the bathroom is in the host&#39;s main house, not the cabin, and Tunbridge is 30&ndash;40 minutes south of Woodstock. Worth it only if the quirky-cabin experience appeals.</p>
+    </div>
+    <div class="stayrow vt">
+      <span class="amt">$870</span>
+      <span class="per">Sat&ndash;Mon Oct 10&ndash;12 &middot; Willoughby Lake Prime Location, Westmore</span>
+      <a href="https://www.airbnb.com/rooms/27435991?adults=2&amp;check_in=2026-10-10&amp;check_out=2026-10-12" target="_blank" rel="noopener">View on Airbnb &rarr;</a>
+      <p class="staynote">The one that fits the plan: across the road from the lake, lake and mountain views, dock and beach access, full kitchen, close to the Pisgah and Hor trails. 4.79 from 58 reviews, Superhost. The owners may occupy an attached apartment and the listing mentions insects in spring and fall &mdash; read the recent reviews.</p>
+    </div>
+    <div class="stayrow vt">
+      <span class="amt">$800</span>
+      <span class="per">Sat&ndash;Mon Oct 10&ndash;12 &middot; Lake Seymour Cabin, Morgan</span>
+      <a href="https://www.airbnb.com/rooms/1354578485536706914?adults=2&amp;check_in=2026-10-10&amp;check_out=2026-10-12" target="_blank" rel="noopener">View on Airbnb &rarr;</a>
+      <p class="staynote">A lovely cabin &mdash; private sandy beach, fire pit, direct lake access, 4.93 from 14 reviews. But it is on Lake Seymour, not Willoughby. Since the lake is one of the destinations, the extra $70 buys the right address.</p>
+    </div>
+    <p class="caveat"><b>Totals.</b> Tunbridge plus Willoughby comes to <b>$960</b>, about $480
+    each. Swapping Willoughby for the Lake Seymour cabin makes it <b>$890</b>, about $445 each
+    &mdash; $35 a head to sleep somewhere other than the lake the trip is named after.</p>
+  </div>
+  <div class="addons">
+    <h4>Optional add-ons</h4>
+    <p>Ideas, not stops. Nothing here is booked, and the gondola in particular depends on the
+    weather that morning.</p>
+    <ul>
+      <li>Franconia Notch on the drive home</li>
+      <li>Mount Pisgah or Mount Hor hike</li>
+      <li>Northeast Kingdom loop via Barton and Memphremagog</li>
+      <li>Quechee Gorge</li>
+      <li>Ben &amp; Jerry&#39;s factory tour</li>
+      <li>Covered bridges along Route 100</li>
+    </ul>
+  </div>
 </div>
 </section>
 
