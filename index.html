@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Two Roads Out of Jersey City</title>
+<title>Four Ways Out of Jersey City</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=DM+Mono:wght@400;500&display=swap">
@@ -11,6 +11,8 @@
   --ink:#161B18; --muted:#5C6862; --faint:#8A958E; --line:#CDD4CB;
   --routeA:#6E8A1C; --routeA-soft:#E7EDD3;
   --routeB:#1B6472; --routeB-soft:#D6E7EA;
+  --routeC:#96501F; --routeC-soft:#F1E2D4;
+  --routeD:#3F5486; --routeD-soft:#DCE2F0;
   --shadow:0 1px 2px rgba(22,27,24,.06), 0 8px 24px -14px rgba(22,27,24,.30);
 }
 @media (prefers-color-scheme: dark){
@@ -19,6 +21,10 @@
     --ink:#E9EEE8; --muted:#97A39C; --faint:#6E7A74; --line:#2B3430;
     --routeA:#A9C74C; --routeA-soft:#26301A;
     --routeB:#57B4C4; --routeB-soft:#12292E;
+    --routeC:#DE9455; --routeC-soft:#33210F;
+    --routeD:#93A8DC; --routeD-soft:#171D2E;
+    --routeC:#DE9455; --routeC-soft:#33210F;
+    --routeD:#93A8DC; --routeD-soft:#171D2E;
     --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 30px -16px rgba(0,0,0,.8);
   }
 }
@@ -27,6 +33,8 @@
   --ink:#E9EEE8; --muted:#97A39C; --faint:#6E7A74; --line:#2B3430;
   --routeA:#A9C74C; --routeA-soft:#26301A;
   --routeB:#57B4C4; --routeB-soft:#12292E;
+  --routeC:#DE9455; --routeC-soft:#33210F;
+  --routeD:#93A8DC; --routeD-soft:#171D2E;
   --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 30px -16px rgba(0,0,0,.8);
 }
 
@@ -218,12 +226,13 @@ body.locked .wrap{filter:blur(7px); pointer-events:none; user-select:none}
 .leadin h2{font-size:25px; font-weight:700; letter-spacing:-.015em; margin:0}
 .leadin p{margin:8px 0 0; color:var(--muted); max-width:62ch}
 .chooser{display:grid; grid-template-columns:repeat(auto-fit,minmax(268px,1fr)); gap:18px; margin-top:26px}
-.chooser.two{grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); max-width:820px}
+.chooser.two{grid-template-columns:repeat(auto-fit,minmax(310px,1fr)); max-width:900px}
 .optcard .desc{font-family:"Bricolage Grotesque",sans-serif; font-weight:700; font-size:18px; color:var(--ink)}
 .optcard{display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line);
   border-radius:6px; box-shadow:var(--shadow); padding:20px 20px 18px; transition:border-color .2s, transform .2s}
 .optcard:hover{transform:translateY(-2px); border-color:var(--faint)}
 .optcard.a{--accent:var(--routeA)} .optcard.b{--accent:var(--routeB)}
+.optcard.catskills{--accent:var(--routeC)} .optcard.philadelphia{--accent:var(--routeD)}
 .optcard .onum{font-family:"DM Mono",monospace; font-size:10.5px; letter-spacing:.16em;
   text-transform:uppercase; color:var(--faint)}
 .optcard h3{display:flex; align-items:center; gap:8px; margin:9px 0 0; font-size:20px; font-weight:700; letter-spacing:-.01em; line-height:1.2}
@@ -238,6 +247,34 @@ body.locked .wrap{filter:blur(7px); pointer-events:none; user-select:none}
   font-size:14px; padding:11px 14px; border-radius:5px; border:1px solid var(--accent);
   background:var(--accent); color:var(--paper); cursor:pointer; transition:.18s}
 .optcard button:hover{filter:brightness(1.08)}
+
+/* ---------- multi-day itinerary (extends .sched) ---------- */
+.tripbody{max-width:820px}
+.varhead{margin:30px 0 4px; padding-bottom:20px; border-bottom:1px solid var(--line)}
+.varhead .vlab{font-family:"DM Mono",monospace; font-size:11px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--faint)}
+.varhead h3{margin:9px 0 0; font-size:24px; font-weight:700; letter-spacing:-.015em}
+.varhead p{margin:8px 0 0; color:var(--muted); max-width:60ch}
+.varhead .badge{margin-top:14px}
+.badge.acc{color:var(--accent); border-color:var(--accent);
+  background:color-mix(in srgb, var(--accent) 11%, transparent)}
+.sched li.dayhead{display:block; padding:26px 0 9px; border-bottom:1px solid var(--line)}
+.sched li.dayhead:first-child{padding-top:14px}
+.sched li.dayhead .d{font-family:"DM Mono",monospace; font-size:11px; letter-spacing:.15em;
+  text-transform:uppercase; color:var(--accent)}
+.sidenote{margin-top:22px; padding:16px 18px; background:var(--surface); border:1px solid var(--line);
+  border-left:3px solid var(--accent); border-radius:5px; color:var(--muted); font-size:15.5px}
+.sidenote b{color:var(--ink); font-family:"Bricolage Grotesque",sans-serif; font-weight:700}
+.addons{margin:34px 0 0; padding:22px 24px; background:var(--surface); border:1px dashed var(--line);
+  border-radius:6px}
+.addons h4{margin:0; font-family:"Bricolage Grotesque",sans-serif; font-size:17px; font-weight:700}
+.addons p{margin:8px 0 0; color:var(--muted); font-size:15.5px; max-width:62ch}
+.addons ul{list-style:none; margin:16px 0 0; padding:14px 0 0; border-top:1px solid var(--line);
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:2px 20px}
+.addons li{position:relative; padding:6px 0 6px 18px; color:var(--muted); font-size:15.5px}
+.addons li::before{content:"+"; position:absolute; left:2px; top:6px; color:var(--faint);
+  font-family:"DM Mono",monospace; font-size:13px}
+@media(max-width:560px){.addons{padding:18px}.varhead h3{font-size:21px}}
 
 /* ---------- route header + segmented control ---------- */
 .routehead{display:flex; flex-wrap:wrap; align-items:center; gap:14px; margin:30px 0 0;
@@ -413,7 +450,7 @@ table.costs td.opt{font-family:"Bricolage Grotesque",sans-serif; font-size:15px;
 <div id="gate" hidden>
   <div class="box">
     <div class="mark">Saturday, September 19, 2026</div>
-    <h1>Pick a river.</h1>
+    <h1>Pick a direction.</h1>
     <p>This trip plan is shared privately. Enter the password to open it.</p>
     <form id="gateform" autocomplete="off">
       <input id="gatepw" type="password" placeholder="Password" aria-label="Password" autocomplete="off">
@@ -426,14 +463,13 @@ table.costs td.opt{font-family:"Bricolage Grotesque",sans-serif; font-size:15px;
 <div class="wrap">
 <header class="top">
   <div class="eyebrow">Saturday, September 19, 2026 · departing Jersey City</div>
-  <h1>Two Roads Out of Jersey City<em>Pick a river.</em></h1>
-  <p class="lede">Two options — one is a foliage excursion, the second is a fall experience with
-  fruit picking and views. The shortened version is constrained by the hours of operation for
-  renting a car out of Newport. The full version is more flexible, given the 24-hour operation
-  at the EWR rental location. Times are just estimates and are flexible to what we want to do
-  and when we want to start.</p>
-  <p class="lede">Each option ends with a stop at a convenient Costco for gas, and a chance to
-  use the $50 check.</p>
+  <h1>Four Ways Out of Jersey City<em>Pick a direction.</em></h1>
+  <p class="lede">Four destinations for the weekend. Two are day trips out and back — one a
+  foliage excursion, the other fruit picking and views — and both end with a stop at a
+  convenient Costco for gas and a chance to use the $50 check. The Catskills can be a day, a
+  night or a weekend; Philadelphia can be done by train or by car.</p>
+  <p class="lede">Times are estimates throughout and flexible to what we want to do and when we
+  want to start. Nothing is booked.</p>
 
   <div class="topnav" role="tablist" aria-label="Sections">
     <button id="nav-plan" role="tab" aria-selected="true" aria-controls="view-plan">Itinerary</button>
@@ -447,9 +483,9 @@ table.costs td.opt{font-family:"Bricolage Grotesque",sans-serif; font-size:15px;
 <div id="chooser">
   <div class="leadin">
     <h2>Choose your day</h2>
-    <p>Pick a destination. Inside each one you can compare the short day against the full
-    day side by side — the short version starts from a Newport rental, the full version from
-    an airport pickup an hour earlier.</p>
+    <p>Pick a destination, then compare its versions inside. New Hope and New Paltz weigh a
+    short day against a full one; the Catskills weigh one day against one or two nights;
+    Philadelphia weighs the train against the car.</p>
   </div>
   <div class="chooser two">
     <div class="optcard a">
@@ -470,13 +506,31 @@ table.costs td.opt{font-family:"Bricolage Grotesque",sans-serif; font-size:15px;
       <div class="badges"><span class="badge flex">&#9201;&#65039; Fuller day</span></div>
       <button data-route="b" data-version="compare">View itinerary</button>
     </div>
+    <div class="optcard catskills">
+      <div class="onum">Catskills</div>
+      <h3>Windham &amp; Kaaterskill</h3>
+      <div class="where">Greene &amp; Ulster County &middot; NY</div>
+      <p class="desc">Horseback + Waterfalls</p>
+      <div class="meta"><span>Base <b>Sat Sep 19</b></span><span>Versions <b>3</b></span></div>
+      <div class="badges"><span class="badge acc">&#127810; Three lengths</span></div>
+      <button data-route="catskills" data-version="v1day">View itinerary</button>
+    </div>
+    <div class="optcard philadelphia">
+      <div class="onum">Philadelphia</div>
+      <h3>Old City</h3>
+      <div class="where">Center City &middot; PA</div>
+      <p class="desc">History + Neighborhoods</p>
+      <div class="meta"><span>Base <b>Sat Sep 19</b></span><span>Versions <b>2</b></span></div>
+      <div class="badges"><span class="badge acc">&#128642; Train or car</span></div>
+      <button data-route="philadelphia" data-version="vamtrak">View itinerary</button>
+    </div>
   </div>
 </div>
 
 <!-- ============================= ROUTE A ============================= -->
 <section class="route on" id="route-a" role="tabpanel" aria-labelledby="tab-a" style="--accent:var(--routeA)">
 <div class="routehead">
-  <button class="back">&#8592; All four options</button>
+  <button class="back">&#8592; All destinations</button>
   <h2>Route A &mdash; New Hope</h2>
   <span class="ctx">Newport pickup &middot; shortened &nbsp;/&nbsp; Airport pickup &middot; full</span>
   <div class="seg" role="tablist" aria-label="Itinerary length">
@@ -737,7 +791,7 @@ table.costs td.opt{font-family:"Bricolage Grotesque",sans-serif; font-size:15px;
 <!-- ============================= ROUTE B ============================= -->
 <section class="route" id="route-b" role="tabpanel" aria-labelledby="tab-b" style="--accent:var(--routeB)">
 <div class="routehead">
-  <button class="back">&#8592; All four options</button>
+  <button class="back">&#8592; All destinations</button>
   <h2>Route B &mdash; New Paltz</h2>
   <span class="ctx">Newport pickup &middot; shortened &nbsp;/&nbsp; Airport pickup &middot; full</span>
   <div class="seg" role="tablist" aria-label="Itinerary length">
@@ -1005,6 +1059,191 @@ table.costs td.opt{font-family:"Bricolage Grotesque",sans-serif; font-size:15px;
 
 
 
+<section class="route" id="route-catskills" role="tabpanel" style="--accent:var(--routeC)">
+<div class="routehead">
+  <button class="back">&#8592; All destinations</button>
+  <h2>Catskills</h2>
+  <span class="ctx">Day trip &middot; one night &middot; two nights</span>
+  <div class="seg" role="tablist" aria-label="Trip length">
+    <button role="tab" data-version="v1day" aria-selected="true">1 Day</button>
+    <button role="tab" data-version="v1night" aria-selected="false">1 Night</button>
+    <button role="tab" data-version="v2night" aria-selected="false">2 Nights</button>
+  </div>
+</div>
+<div class="version v1day on">
+<div class="tripbody">
+  <div class="varhead">
+    <div class="vlab">Saturday, September 19</div>
+    <h3>One-day excursion</h3>
+    <p>Concentrated adventure &mdash; one long, full day.</p>
+    <span class="badge acc">&#9889; Concentrated</span>
+  </div>
+  <ol class="sched">
+      <li class="move"><span class="t">7:00 AM</span><span class="w"><b>Leave Jersey City / pick up rental car</b></span></li>
+      <li class="star"><span class="t">~9:30–11:00 AM</span><span class="w"><b>&#11088; Horseback riding near Windham</b></span></li>
+      <li><span class="t">11:15 AM–12:15 PM</span><span class="w"><b>Windham + lunch</b></span></li>
+      <li class="move"><span class="t">12:15–1:00 PM</span><span class="w"><b>Scenic drive toward Hunter / Tannersville</b><span>Route 23A.</span></span></li>
+      <li><span class="t">1:00–2:30 PM</span><span class="w"><b>Kaaterskill Falls</b><span>Take the shorter viewing-platform route rather than making this a hiking excursion.</span></span></li>
+      <li class="move"><span class="t">2:30–3:15 PM</span><span class="w"><b>Scenic drive through Kaaterskill Clove</b></span></li>
+      <li><span class="t">~3:30–5:00 PM</span><span class="w"><b>Phoenicia</b><span>Coffee, wander the town, walk along the Esopus Creek.</span></span></li>
+      <li class="move"><span class="t">~5:00 PM</span><span class="w"><b>Depart for Jersey City</b></span></li>
+      <li class="move"><span class="t">~7:30–8:00 PM</span><span class="w"><b>Back in Jersey City</b></span></li>
+  </ol>
+  <div class="sidenote"><b>Rafting instead of horseback riding.</b> If the weather and water conditions suit and an operator is running trips that day, rafting could take the morning slot instead. Treat it as a swap to look into, not part of the plan &mdash; nothing here assumes it is available.</div>
+</div>
+</div>
+
+<div class="version v1night">
+<div class="tripbody">
+  <div class="varhead">
+    <div class="vlab">Saturday, September 19 &rarr; Sunday, September 20</div>
+    <h3>One night away</h3>
+    <p>The sweet spot &mdash; the same highlights with room to breathe.</p>
+    <span class="badge acc">&#11088; Sweet spot</span>
+  </div>
+  <ol class="sched">
+      <li class="dayhead"><span class="d">Saturday, September 19</span></li>
+      <li class="move"><span class="t">7:30 AM</span><span class="w"><b>Leave Jersey City</b></span></li>
+      <li class="star"><span class="t">~10:00 AM–12:00 PM</span><span class="w"><b>&#11088; Horseback riding</b></span></li>
+      <li><span class="t">12:15–1:15 PM</span><span class="w"><b>Lunch in Windham</b></span></li>
+      <li class="move"><span class="t">1:15–2:15 PM</span><span class="w"><b>Scenic Route 23A</b><span>Hunter, Tannersville, on toward the Kaaterskill area.</span></span></li>
+      <li><span class="t">~2:15–3:45 PM</span><span class="w"><b>Kaaterskill Falls</b></span></li>
+      <li><span class="t">4:00–4:45 PM</span><span class="w"><b>Tannersville</b><span>Coffee, shops, an unhurried look around.</span></span></li>
+      <li class="move"><span class="t">~5:00 PM</span><span class="w"><b>Check in</b><span>Lodging around Phoenicia, Mount Tremper or Tannersville.</span></span></li>
+      <li><span class="t">Evening</span><span class="w"><b>Dinner and a slow evening</b><span>Deliberately unscheduled.</span></span></li>
+      <li class="dayhead"><span class="d">Sunday, September 20</span></li>
+      <li><span class="t">~8:00 AM</span><span class="w"><b>Breakfast</b></span></li>
+      <li><span class="t">~9:00–11:30 AM</span><span class="w"><b>Easy hike or scenic outdoor time</b><span>A viewpoint, a waterfall, or the Esopus Creek walk at Phoenicia &mdash; pick on the morning rather than committing now.</span></span></li>
+      <li class="move"><span class="t">~12:00 PM</span><span class="w"><b>Drive to Woodstock</b></span></li>
+      <li><span class="t">12:30 PM</span><span class="w"><b>Lunch</b></span></li>
+      <li><span class="t">1:30–3:00 PM</span><span class="w"><b>Woodstock village</b><span>Shops and galleries.</span></span></li>
+      <li class="move"><span class="t">3:00 PM</span><span class="w"><b>Scenic Route 28</b></span></li>
+      <li class="move"><span class="t">~3:30–4:00 PM</span><span class="w"><b>Depart for Jersey City</b></span></li>
+      <li class="move"><span class="t">~6:00 PM</span><span class="w"><b>Home</b></span></li>
+  </ol>
+</div>
+</div>
+
+<div class="version v2night">
+<div class="tripbody">
+  <div class="varhead">
+    <div class="vlab">Friday, September 18 after work &rarr; Sunday, September 20</div>
+    <h3>Two nights away</h3>
+    <p>A real mini-vacation &mdash; the slowest, most immersive version.</p>
+    <span class="badge acc">&#129496; Most immersive</span>
+  </div>
+  <ol class="sched">
+      <li class="dayhead"><span class="d">Friday, September 18</span></li>
+      <li class="move"><span class="t">After work</span><span class="w"><b>Leave Jersey City</b><span>Drive straight to the lodging.</span></span></li>
+      <li class="move"><span class="t">~8:30–9:00 PM</span><span class="w"><b>Check in</b><span>Phoenicia, Mount Tremper or Woodstock.</span></span></li>
+      <li><span class="t">Evening</span><span class="w"><b>Dinner nearby</b><span>Nothing scheduled tonight, on purpose.</span></span></li>
+      <li class="dayhead"><span class="d">Saturday, September 19</span></li>
+      <li><span class="t">~8:30 AM</span><span class="w"><b>Breakfast</b></span></li>
+      <li class="star"><span class="t">~10:00 AM–12:00 PM</span><span class="w"><b>&#11088; Horseback riding</b></span></li>
+      <li><span class="t">12:15 PM</span><span class="w"><b>Lunch</b></span></li>
+      <li class="move"><span class="t">1:30 PM</span><span class="w"><b>Scenic drive</b><span>Hunter, Tannersville, Route 23A.</span></span></li>
+      <li><span class="t">~2:30–4:00 PM</span><span class="w"><b>Kaaterskill Falls</b></span></li>
+      <li class="move"><span class="t">4:00–5:00 PM</span><span class="w"><b>Kaaterskill Clove drive</b></span></li>
+      <li class="move"><span class="t">~5:30 PM</span><span class="w"><b>Back to the lodging</b></span></li>
+      <li><span class="t">~7:00 PM</span><span class="w"><b>Dinner</b><span>A relaxed evening after.</span></span></li>
+      <li class="dayhead"><span class="d">Sunday, September 20</span></li>
+      <li><span class="t">~8:30 AM</span><span class="w"><b>Breakfast</b></span></li>
+      <li><span class="t">~9:30–11:30 AM</span><span class="w"><b>Hike or outdoor time</b><span>Moderate, and flexible &mdash; decide on the day.</span></span></li>
+      <li class="move"><span class="t">12:00 PM</span><span class="w"><b>Drive to Woodstock</b></span></li>
+      <li><span class="t">12:30 PM</span><span class="w"><b>Lunch</b></span></li>
+      <li><span class="t">1:30–3:00 PM</span><span class="w"><b>Woodstock village</b><span>Shops and galleries.</span></span></li>
+      <li class="move"><span class="t">3:00 PM</span><span class="w"><b>Scenic drive home</b></span></li>
+      <li class="move"><span class="t">~5:30–6:00 PM</span><span class="w"><b>Jersey City</b></span></li>
+  </ol>
+</div>
+</div>
+
+<div class="tripbody">
+  <div class="addons">
+    <h4>Optional add-ons</h4>
+    <p>Ideas to look into, not stops in the plan. None of these are booked, and availability on September 19 is worth checking before counting on any of them.</p>
+    <ul>
+      <li>Rafting, if the weather and water conditions suit</li>
+      <li>Other horseback riding outfits</li>
+      <li>Pottery and craft workshops</li>
+      <li>Scenic train rides</li>
+      <li>Additional hikes</li>
+      <li>Orchard and farm visits</li>
+      <li>Local events or live music</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<section class="route" id="route-philadelphia" role="tabpanel" style="--accent:var(--routeD)">
+<div class="routehead">
+  <button class="back">&#8592; All destinations</button>
+  <h2>Philadelphia</h2>
+  <span class="ctx">By Amtrak &middot; by car</span>
+  <div class="seg" role="tablist" aria-label="Trip length">
+    <button role="tab" data-version="vamtrak" aria-selected="true">By Amtrak</button>
+    <button role="tab" data-version="vcar" aria-selected="false">By car</button>
+  </div>
+</div>
+<div class="version vamtrak on">
+<div class="tripbody">
+  <div class="varhead">
+    <div class="vlab">Saturday, September 19</div>
+    <h3>By Amtrak</h3>
+    <p>No driving, no parking &mdash; a relaxed urban day on foot.</p>
+    <span class="badge acc">&#128642; No parking</span>
+  </div>
+  <ol class="sched">
+      <li class="move"><span class="t">Morning</span><span class="w"><b>Jersey City &rarr; Penn Station &rarr; Amtrak</b><span>To 30th Street Station.</span></span></li>
+      <li class="move"><span class="t">~9:00–9:30 AM</span><span class="w"><b>Arrive in Philadelphia</b></span></li>
+      <li class="star"><span class="t">Morning</span><span class="w"><b>&#11088; Old City</b><span>Independence National Historical Park, the Liberty Bell, Independence Hall, Elfreth&#39;s Alley and the streets around them. Pick a few rather than trying for all of it.</span></span></li>
+      <li><span class="t">~12:00 PM</span><span class="w"><b>Lunch</b><span>Reading Terminal Market, Old City or Center City.</span></span></li>
+      <li><span class="t">Afternoon</span><span class="w"><b>Keep exploring</b><span>Old City, Rittenhouse Square, Society Hill, or Fishtown / Northern Liberties. Left open on purpose.</span></span></li>
+      <li><span class="t">Evening</span><span class="w"><b>Dinner</b></span></li>
+      <li class="move"><span class="t">~7:00–8:00 PM</span><span class="w"><b>Amtrak back toward NYC</b></span></li>
+      <li class="move"><span class="t">~9:00 PM</span><span class="w"><b>Back in Jersey City</b></span></li>
+  </ol>
+</div>
+</div>
+
+<div class="version vcar">
+<div class="tripbody">
+  <div class="varhead">
+    <div class="vlab">Saturday, September 19</div>
+    <h3>Driving down</h3>
+    <p>More flexibility &mdash; trade the train for reach across neighborhoods.</p>
+    <span class="badge acc">&#128663; Most flexible</span>
+  </div>
+  <ol class="sched">
+      <li class="move"><span class="t">~8:00 AM</span><span class="w"><b>Drive Jersey City &rarr; Philadelphia</b></span></li>
+      <li class="move"><span class="t">~9:30 AM</span><span class="w"><b>Arrive and park</b></span></li>
+      <li class="star"><span class="t">9:45–11:30 AM</span><span class="w"><b>&#11088; Old City</b><span>Liberty Bell, Independence Hall, Elfreth&#39;s Alley and the historic blocks around them.</span></span></li>
+      <li><span class="t">~11:45 AM–12:45 PM</span><span class="w"><b>Reading Terminal Market</b><span>Lunch.</span></span></li>
+      <li><span class="t">Afternoon</span><span class="w"><b>One or two neighborhoods</b><span>Rittenhouse, Society Hill, Old City, Fishtown or Northern Liberties &mdash; two done properly beats five in passing.</span></span></li>
+      <li><span class="t">Late afternoon</span><span class="w"><b>Coffee, shops, wandering</b></span></li>
+      <li><span class="t">~6:00–7:30 PM</span><span class="w"><b>Dinner</b></span></li>
+      <li class="move"><span class="t">~7:30 PM</span><span class="w"><b>Drive back to Jersey City</b></span></li>
+      <li class="move"><span class="t">~9:00 PM</span><span class="w"><b>Home</b></span></li>
+  </ol>
+</div>
+</div>
+
+<div class="tripbody">
+  <div class="addons">
+    <h4>Optional add-ons</h4>
+    <p>Ideas to look into, not stops in the plan. None of these are booked, and availability on September 19 is worth checking before counting on any of them.</p>
+    <ul>
+      <li>Pottery</li>
+      <li>Candle making</li>
+      <li>Dumpling-making</li>
+      <li>Papermaking</li>
+      <li>Other ceramics, arts and craft workshops</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+
 <!-- ============================= RENTAL ============================= -->
 <section class="view" id="view-car" role="tabpanel" aria-labelledby="nav-car" style="--accent:var(--routeA)">
   <div class="leadin">
@@ -1102,6 +1341,9 @@ table.costs td.opt{font-family:"Bricolage Grotesque",sans-serif; font-size:15px;
       </tbody>
     </table>
   </div>
+  <p class="freenote"><b>Catskills and Philadelphia are not priced here.</b> There are no
+  rental, lodging or Amtrak quotes in hand for them yet, so they are left out rather than
+  estimated.</p>
   <p class="freenote"><b>The two rentals cost about the same once you count the rides.</b>
   Newport is $109 with no transport; the airport is about $47 plus roughly $60 of Uber, so
   around $107. A couple of dollars apart — pick on how early you want to leave, not on price.</p>
@@ -1179,7 +1421,11 @@ Maps are schematic: pin positions are geographically placed, road shapes are sim
   });
 
   var chooser = document.getElementById('chooser');
-  var routes  = {a:document.getElementById('route-a'), b:document.getElementById('route-b')};
+  // every destination section, keyed by the id suffix its option card points at
+  var routes = {};
+  document.querySelectorAll('section.route').forEach(function(sec){
+    routes[sec.id.replace(/^route-/, '')] = sec;
+  });
 
   function setVersion(routeEl, version){
     routeEl.querySelectorAll('.version').forEach(function(v){
