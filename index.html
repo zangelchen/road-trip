@@ -15,6 +15,7 @@
   --routeD:#3F5486; --routeD-soft:#DCE2F0;
   --routeE:#6A4B93; --routeE-soft:#E6DEF2;
   --routeF:#A8352F; --routeF-soft:#F5DEDA;
+  --routeG:#6E2B45; --routeG-soft:#EFDCE5;
   --shadow:0 1px 2px rgba(22,27,24,.06), 0 8px 24px -14px rgba(22,27,24,.30);
 }
 @media (prefers-color-scheme: dark){
@@ -27,10 +28,12 @@
     --routeD:#93A8DC; --routeD-soft:#171D2E;
     --routeE:#B79BE0; --routeE-soft:#241B33;
     --routeF:#EF8F80; --routeF-soft:#301917;
+    --routeG:#DE93B4; --routeG-soft:#2B1622;
     --routeC:#DE9455; --routeC-soft:#33210F;
     --routeD:#93A8DC; --routeD-soft:#171D2E;
     --routeE:#B79BE0; --routeE-soft:#241B33;
     --routeF:#EF8F80; --routeF-soft:#301917;
+    --routeG:#DE93B4; --routeG-soft:#2B1622;
     --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 30px -16px rgba(0,0,0,.8);
   }
 }
@@ -43,6 +46,7 @@
   --routeD:#93A8DC; --routeD-soft:#171D2E;
   --routeE:#B79BE0; --routeE-soft:#241B33;
   --routeF:#EF8F80; --routeF-soft:#301917;
+  --routeG:#DE93B4; --routeG-soft:#2B1622;
   --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 30px -16px rgba(0,0,0,.8);
 }
 
@@ -249,6 +253,7 @@ body.locked .wrap{filter:blur(7px); pointer-events:none; user-select:none}
 .optcard.catskills{--accent:var(--routeC)} .optcard.philadelphia{--accent:var(--routeD)}
 .optcard.home{--accent:var(--routeE)}
 .optcard.vermont{--accent:var(--routeF)}
+.optcard.fingerlakes{--accent:var(--routeG)}
 .optcard .onum{font-family:"DM Mono",monospace; font-size:10.5px; letter-spacing:.16em;
   text-transform:uppercase; color:var(--faint)}
 .optcard h3{display:flex; align-items:center; gap:8px; margin:9px 0 0; font-size:20px; font-weight:700; letter-spacing:-.01em; line-height:1.2}
@@ -297,6 +302,15 @@ body.locked .wrap{filter:blur(7px); pointer-events:none; user-select:none}
   text-decoration-thickness:1px; text-underline-offset:3px; white-space:nowrap}
 .stayrow.vt{flex-direction:column; align-items:flex-start; gap:6px; padding:16px 0}
 .stayrow.vt .amt{font-size:22px}
+.stayrow.vt .rank{font-family:"DM Mono",monospace; font-size:10.5px; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--accent); border:1px solid var(--accent); border-radius:999px;
+  padding:3px 9px}
+.splithead{margin:34px 0 0; padding-top:24px; border-top:1px solid var(--line)}
+.splithead .d{font-family:"DM Mono",monospace; font-size:11px; letter-spacing:.15em;
+  text-transform:uppercase; color:var(--accent)}
+.splithead p{margin:8px 0 0; color:var(--muted); max-width:62ch}
+.splithead + .cmp{margin-top:20px}
+.cmp + .sched{margin-top:12px}
 .stayrow.vt .staynote{margin:6px 0 0; color:var(--muted); font-size:15px; max-width:64ch}
 .stays .caveat{margin:16px 0 0; padding-top:14px; border-top:1px solid var(--line);
   color:var(--muted); font-size:15px}
@@ -576,8 +590,8 @@ table.costs td.opt{font-family:"Bricolage Grotesque",sans-serif; font-size:15px;
 
   <div class="leadin second">
     <h2>October &mdash; Columbus Day weekend</h2>
-    <p>A longer trip, further north, over the long weekend of October 9&ndash;12. Peak foliage
-    rather than early-season colour.</p>
+    <p>Longer trips over the long weekend of October 9&ndash;12 &mdash; three nights each, and
+    closer to peak foliage than the September options.</p>
   </div>
   <div class="chooser two">
     <div class="optcard vermont">
@@ -588,6 +602,15 @@ table.costs td.opt{font-family:"Bricolage Grotesque",sans-serif; font-size:15px;
       <div class="meta"><span>Dates <b>Oct 9&ndash;12</b></span><span>Nights <b>3</b></span></div>
       <div class="badges"><span class="badge acc">&#127809; Four-day road trip</span></div>
       <button data-route="vermont" data-version="vvt">View itinerary</button>
+    </div>
+    <div class="optcard fingerlakes">
+      <div class="onum">Finger Lakes</div>
+      <h3>Trumansburg &amp; Watkins Glen</h3>
+      <div class="where">Cayuga &middot; Seneca &middot; NY</div>
+      <p class="desc">Waterfalls + Wine + Cabin</p>
+      <div class="meta"><span>Dates <b>Oct 9&ndash;12</b></span><span>Nights <b>3</b></span></div>
+      <div class="badges"><span class="badge acc">&#127863; One base, three nights</span></div>
+      <button data-route="fingerlakes" data-version="vfl">View itinerary</button>
     </div>
   </div>
 </div>
@@ -1466,6 +1489,141 @@ table.costs td.opt{font-family:"Bricolage Grotesque",sans-serif; font-size:15px;
       <li>Quechee Gorge</li>
       <li>Ben &amp; Jerry&#39;s factory tour</li>
       <li>Covered bridges along Route 100</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<section class="route" id="route-fingerlakes" role="tabpanel" style="--accent:var(--routeG)">
+<div class="routehead">
+  <button class="back">&#8592; All destinations</button>
+  <h2>Finger Lakes</h2>
+  <span class="ctx">Fri Oct 9 &rarr; Mon Oct 12 &middot; three nights, one base</span>
+</div>
+<div class="version vfl on">
+<div class="tripbody">
+  <div class="varhead">
+    <div class="vlab">Friday, October 9 &rarr; Monday, October 12</div>
+    <h3>Waterfalls, Watkins Glen and Seneca wine</h3>
+    <p>One cabin for three nights instead of moving bases. There are eleven lakes and far too
+    much to see &mdash; this picks the Ithaca&ndash;Seneca&ndash;Watkins Glen cluster and stays in it.</p>
+    <span class="badge acc">&#127863; Waterfalls + wine</span>
+  </div>
+  <div class="sidenote"><b>Three hikes, in order.</b> Watkins Glen first &mdash; the most
+  distinctive thing in the region. Then Taughannock for the drop and the gorge. Then Robert
+  Treman for Lucifer Falls. Buttermilk is good and unnecessary; four waterfall parks in three
+  nights is too many.</div>
+  <ol class="sched">
+      <li class="dayhead"><span class="d">Friday, October 9 &middot; Jersey City &rarr; Trumansburg</span></li>
+      <li class="move"><span class="t">9:00 AM</span><span class="w"><b>Leave Jersey City</b><span>About 3h40 nonstop to Ithaca &mdash; give it four and a half hours with a food and gas stop.</span></span></li>
+      <li><span class="t">~1:30 PM</span><span class="w"><b>Lunch around Ithaca or Trumansburg</b><span>Rather than cramming in an attraction on the way.</span></span></li>
+      <li class="move"><span class="t">2:30–3:00 PM</span><span class="w"><b>Check in</b><span>Three nights here. Do not get straight back in the car.</span></span></li>
+      <li class="star"><span class="t">3:30–5:30 PM</span><span class="w"><b>&#11088; Settle into the property</b><span>The porch, the waterfall, coffee or wine, a book, the fire pit if the weather holds. This is half the reason to pay for the cabin.</span></span></li>
+      <li class="move"><span class="t">5:30 PM</span><span class="w"><b>Sunset drive</b><span>Southern Cayuga and the Trumansburg countryside. No destination needed.</span></span></li>
+      <li><span class="t">7:00 PM</span><span class="w"><b>Dinner</b><span>Somewhere casual in Ithaca, or buy good local food and wine and cook in.</span></span></li>
+      <li><span class="t">9:00 PM onward</span><span class="w"><b>Nothing</b><span>Deliberately.</span></span></li>
+      <li class="dayhead"><span class="d">Saturday, October 10 &middot; Waterfalls, gorge and wine</span></li>
+      <li><span class="t">8:00 AM</span><span class="w"><b>Breakfast</b><span>No rush.</span></span></li>
+      <li><span class="t">9:00 AM</span><span class="w"><b>Taughannock Falls</b><span>Minutes from the cabin. A 215-foot drop with gorge walls near 400 feet, and both gorge and rim trails. An hour to ninety minutes &mdash; not a big hike.</span></span></li>
+      <li class="move"><span class="t">10:45 AM</span><span class="w"><b>Drive toward Watkins Glen</b><span>Vineyards, farms, rolling hills and lake overlooks. The drive is part of it.</span></span></li>
+      <li class="star"><span class="t">12:00 PM</span><span class="w"><b>&#11088; Watkins Glen State Park</b><span>The one to prioritise: nineteen waterfalls in about a mile on the Gorge Trail. Give it 90 minutes to two hours. The trail usually stays open to mid-October, weather permitting &mdash; check conditions before you go.</span></span></li>
+      <li><span class="t">~2:00 PM</span><span class="w"><b>Lunch in Watkins Glen</b><span>Do not overthink it.</span></span></li>
+      <li class="star"><span class="t">2:30 PM</span><span class="w"><b>&#11088; Seneca Lake wine country</b><span>North along the lake. Two wineries, not six &mdash; or one with a view worth staying at.</span></span></li>
+      <li><span class="t">5:30–6:00 PM</span><span class="w"><b>Sunset on Seneca</b><span>Stop trying to accomplish things. Wine, lake, colour, sunset.</span></span></li>
+      <li><span class="t">7:00 PM</span><span class="w"><b>Back to the cabin</b><span>Dinner, fire pit, waterfall.</span></span></li>
+  </ol>
+
+  <div class="splithead">
+    <div class="d">Sunday, October 11 &middot; pick one</div>
+    <p>The only real fork in the trip. Niagara is worth seeing once, but it is about six hours
+    of driving on top of the falls themselves.</p>
+  </div>
+  <div class="cmp">
+  <div class="cmpcol pickd">
+    <div class="cmphead"><div class="lab">Option B</div><h3>Slow Finger Lakes day</h3><div class="sub">Recommended if the goal is to relax</div><span class="badge rec">&#129496; Better vacation day</span></div>
+    <div class="cmpbody"><ol class="sched">
+      <li><span class="t">Morning</span><span class="w"><b>Sleep in</b><span>Coffee, then Taughannock or Cayuga Lake at your own pace.</span></span></li>
+      <li class="star"><span class="t">Midday</span><span class="w"><b>Ithaca</b><span>Downtown and the Cornell area on foot.</span></span></li>
+      <li><span class="t">Afternoon</span><span class="w"><b>One waterfall park or the wine trail</b><span>Robert H. Treman, Buttermilk Falls, or the Cayuga Lake wineries &mdash; whichever suits the day.</span></span></li>
+      <li><span class="t">Evening</span><span class="w"><b>Cabin</b><span>Fire, dinner, waterfall.</span></span></li>
+    </ol></div>
+  </div>
+  <div class="cmpcol">
+    <div class="cmphead"><div class="lab">Option A</div><h3>Niagara Falls</h3><div class="sub">~2h50 each way from Ithaca</div><span class="badge ">&#128704; Worth it once</span></div>
+    <div class="cmpbody"><ol class="sched">
+      <li class="move"><span class="t">7:30 AM</span><span class="w"><b>Leave the cabin</b><span>Coffee and breakfast to go.</span></span></li>
+      <li class="star"><span class="t">~10:30 AM</span><span class="w"><b>Niagara Falls State Park</b><span>American Falls, Horseshoe Falls, Goat Island, the overlooks. Three or four hours. The falls are the point &mdash; no need for the paid add-ons.</span></span></li>
+      <li class="move"><span class="t">~2:30 PM</span><span class="w"><b>Leave Niagara</b></span></li>
+      <li><span class="t">~5:30 PM</span><span class="w"><b>Dinner on the way back</b></span></li>
+      <li class="move"><span class="t">7:00 PM</span><span class="w"><b>Cabin</b></span></li>
+    </ol></div>
+  </div>
+  </div>
+
+  <ol class="sched">
+      <li class="dayhead"><span class="d">Monday, October 12 &middot; Last hike, then home</span></li>
+      <li><span class="t">8:30 AM</span><span class="w"><b>Breakfast at the cabin</b><span>You have the whole day. No six a.m. start.</span></span></li>
+      <li><span class="t">9:30 AM</span><span class="w"><b>Robert H. Treman State Park</b><span>The second big hike: the gorge trail to 115-foot Lucifer Falls, plus the rim. Ninety minutes to two hours.</span></span></li>
+      <li><span class="t">11:30 AM</span><span class="w"><b>Ithaca</b><span>Lunch and a walk. No need for half a day.</span></span></li>
+      <li class="move"><span class="t">1:00 PM</span><span class="w"><b>Start home</b><span>About four hours back to Jersey City, arriving late afternoon or early evening.</span></span></li>
+  </ol>
+
+  <div class="sidenote"><b>Foliage timing works in your favour here.</b> The Finger Lakes window
+  generally runs mid-October into early November, and it varies across the region: the southern
+  and western areas around Watkins Glen tend to turn earlier, Ithaca and the northern lakes
+  later. On October 9&ndash;12 that means you can move toward whatever is actually turning.</div>
+</div>
+</div>
+
+<div class="tripbody">
+  <div class="stays">
+    <h4>Lodging</h4>
+    <p class="lede2">Four listings, ranked for this itinerary. Prices as quoted for these dates.</p>
+    <div class="stayrow vt">
+      <span class="amt">$900</span>
+      <span class="rank">&#129351; Best overall</span>
+      <span class="per">Waterfall Retreat, Trumansburg</span>
+      <a href="https://www.airbnb.com/rooms/1151330640842493579" target="_blank" rel="noopener">View on Airbnb &rarr;</a>
+      <p class="staynote">Between Cayuga and Seneca, about fifteen minutes from both Watkins Glen and Ithaca, with a private waterfall outside the cabin visible from the porch and the bedroom. 5.0 from 120 reviews, Guest Favourite and top 5%. Small one-bedroom, the hosts live in the main house, no TV and a minimally stocked kitchen.</p>
+    </div>
+    <div class="stayrow vt">
+      <span class="amt">$800</span>
+      <span class="rank">&#129352; Best value</span>
+      <span class="per">Seneca Lake View Chalet, Penn Yan</span>
+      <a href="https://www.airbnb.com/rooms/42358977" target="_blank" rel="noopener">View on Airbnb &rarr;</a>
+      <p class="staynote">On the Seneca wine trail with lake views from every room and floor-to-ceiling windows. 4.97 from 174 reviews, Superhost. The catch: no lake access &mdash; you get the view and the location, not the water.</p>
+    </div>
+    <div class="stayrow vt">
+      <span class="amt">$1,000</span>
+      <span class="rank">Wrong geography</span>
+      <span class="per">H&aring;vn Cottage, Conesus Lake</span>
+      <a href="https://www.airbnb.com/rooms/1687013858983712860" target="_blank" rel="noopener">View on Airbnb &rarr;</a>
+      <p class="staynote">Gorgeous as a lake house: private dock, kayaks, pedal boats, fire pit at the water. 5.0, though from only 10 reviews. But Conesus is well west, away from the Ithaca&ndash;Seneca&ndash;Watkins Glen core. Right choice for a barely-leave-the-house trip; wrong one for this.</p>
+    </div>
+    <div class="stayrow vt">
+      <span class="amt">$1,200</span>
+      <span class="rank">Overpriced here</span>
+      <span class="per">Honeoye Happy Place, Honeoye Lake</span>
+      <a href="https://www.airbnb.com/rooms/1213141863151145326" target="_blank" rel="noopener">View on Airbnb &rarr;</a>
+      <p class="staynote">Another lovely lakefront place, with kayaks, paddleboards, fishing gear and a seasonal dock. But it is $300&ndash;400 more than the others while putting you further from Ithaca and Watkins Glen.</p>
+    </div>
+    <p class="caveat"><b>The pick: the $900 Trumansburg cabin over the $800 chalet.</b> The
+    extra $100 buys a far more memorable place to come back to, while sitting almost exactly
+    between Ithaca, Cayuga, Seneca and Watkins Glen. Before booking, though, map the real
+    driving times from each place to each attraction &mdash; if Penn Yan cuts meaningful driving
+    off the wine and Watkins Glen days, that could flip the ranking.</p>
+  </div>
+  <div class="addons">
+    <h4>Optional add-ons</h4>
+    <p>Ideas, not stops. Nothing here is booked, and the Watkins Glen gorge trail depends on
+    conditions.</p>
+    <ul>
+      <li>Buttermilk Falls State Park</li>
+      <li>Cayuga Lake wine trail</li>
+      <li>Cornell campus and the Ithaca gorges</li>
+      <li>More Seneca wineries</li>
+      <li>Paid attractions at Niagara</li>
+      <li>Farm stands and roadside cider</li>
     </ul>
   </div>
 </div>
