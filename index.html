@@ -436,6 +436,21 @@ table.hoteltable td .usd{display:block; color:var(--faint); font-size:11px; marg
 .pill.canandaigua{color:var(--routeA); border-color:var(--routeA)}
 .pill.geneva{color:var(--routeG); border-color:var(--routeG)}
 .pill.seneca{color:var(--routeC); border-color:var(--routeC)}
+.picks{margin:18px 0 0; padding:18px 20px; background:var(--paper); border:1px solid var(--accent);
+  border-radius:6px}
+.picks h5{margin:0 0 12px; font-family:"DM Mono",monospace; font-size:10.5px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--accent); font-weight:400}
+.picks ol{list-style:none; margin:0; padding:0; display:grid; gap:13px}
+.picks li{display:grid; grid-template-columns:30px 1fr; gap:10px; align-items:start}
+.picks li div{min-width:0}
+.picks .m{font-size:17px; line-height:1.2; font-family:"DM Mono",monospace; color:var(--muted)}
+.picks b{font-family:"Bricolage Grotesque",sans-serif; font-weight:700; font-size:15.5px}
+.picks span:not(.m){display:block; margin-top:4px; color:var(--muted); font-size:15px}
+table.hoteltable tr.pick td{background:color-mix(in srgb, var(--accent) 7%, transparent)}
+table.hoteltable tr.pick td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
+.pickchip{display:inline-block; margin-left:8px; font-family:"DM Mono",monospace; font-size:10px;
+  letter-spacing:.1em; text-transform:uppercase; color:var(--accent); border:1px solid var(--accent);
+  border-radius:999px; padding:2px 8px; white-space:nowrap; vertical-align:2px}
 .tblnote{margin:14px 0 0; color:var(--muted); font-size:14.5px; max-width:74ch}
 .regions{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px; margin-top:18px}
 .regcard{background:var(--paper); border:1px solid var(--line); border-radius:5px; padding:16px 18px}
@@ -1693,8 +1708,33 @@ table.costs td.opt{font-family:"Bricolage Grotesque",sans-serif; font-size:15px;
     The 41 Lakefront appears twice for exactly that reason: $900 on the 9th, $1,288 on the 15th,
     same room. Sort by date first, then by price.</div>
 
+    <div class="picks">
+      <h5>Your top picks</h5>
+      <ol>
+        <li><span class="m">&#129351;</span><div><b>Watkins Glen &mdash; VRBO 7080117 &middot; $782.88</b>
+          <span>Potentially the best value, and the first one to investigate. Town, Seneca Lake,
+          the state park, wineries and boating all concentrated in one place, at $261 a night
+          against $297&ndash;314 for the other Watkins Glen options. Check the reviews and the
+          exact location before anything else.</span></div></li>
+        <li><span class="m">&#129352;</span><div><b>The Franklin &mdash; $749.10</b>
+          <span>The best inn option: three nights with breakfast, a queen, a fireplace and a
+          proper bathroom. You are paying for the lodging experience rather than a lake house,
+          which is fine if you are out exploring all day. Better than an $860&ndash;900 generic
+          hotel.</span></div></li>
+        <li><span class="m">&#129353;</span><div><b>Canandaigua &mdash; VRBO 4654451 &middot; $862</b>
+          <span>The one if Canandaigua becomes the base, and stronger still if it is walkable to
+          the lake and downtown. That matches what you actually want: hiking, walking the
+          shoreline, jet ski, a lake cruise, and a historic little city to wander.</span></div></li>
+        <li><span class="m">4</span><div><b>Watkins Glen &mdash; 304 3rd St, Airbnb &middot; $890.40</b>
+          <span>Better than the $942.40 VRBO for what looks like the same flat &mdash; $52 less at
+          the same address. Only worth the premium over the $782.88 option if it is materially
+          nicer.</span></div></li>
+      </ol>
+    </div>
+
     <div class="filters" role="group" aria-label="Filter by town">
       <button class="fbtn on" data-region="all">All</button>
+      <button class="fbtn" data-region="picks">&#11088; Top picks</button>
       <button class="fbtn" data-region="Canandaigua">Canandaigua</button>
       <button class="fbtn" data-region="Geneva">Geneva</button>
       <button class="fbtn" data-region="Watkins Glen">Watkins Glen</button>
@@ -1711,9 +1751,9 @@ table.costs td.opt{font-family:"Bricolage Grotesque",sans-serif; font-size:15px;
           <th class="sortable" data-type="num">Per night</th>
         </tr></thead>
         <tbody>
-        <tr data-region="Canandaigua">
+        <tr data-region="Canandaigua" data-pick="2" class="pick">
           <td class="reg"><span class="pill canandaigua">Canandaigua</span></td>
-          <td class="opt"><a href="https://via.eviivo.com/en-en/Google/b14424?startdate=2026-10-15&amp;enddate=2026-10-18&amp;adults1=2&amp;children1=0&amp;currency=USD&amp;roomtypeid=125160&amp;rateplanid=315758" target="_blank" rel="noopener">The Franklin &mdash; Comfort Ensuite &rarr;</a><span class="note">$660 + $89.10 fees. Breakfast included, queen, electric fireplace.</span></td>
+          <td class="opt"><a href="https://via.eviivo.com/en-en/Google/b14424?startdate=2026-10-15&amp;enddate=2026-10-18&amp;adults1=2&amp;children1=0&amp;currency=USD&amp;roomtypeid=125160&amp;rateplanid=315758" target="_blank" rel="noopener">The Franklin &mdash; Comfort Ensuite &rarr;</a><span class="pickchip">🥈 Best inn</span><span class="note">$660 + $89.10 fees. Breakfast included, queen, electric fireplace.</span></td>
           <td data-sort="2026-10-15">15&ndash;18 Oct</td>
           <td data-sort="749.10">$749.10</td>
           <td data-sort="249.70">$250</td>
@@ -1725,9 +1765,9 @@ table.costs td.opt{font-family:"Bricolage Grotesque",sans-serif; font-size:15px;
           <td data-sort="741.37">&euro;644.67<span class="usd">~$741</span></td>
           <td data-sort="247.12">$247</td>
         </tr>
-        <tr data-region="Canandaigua">
+        <tr data-region="Canandaigua" data-pick="3" class="pick">
           <td class="reg"><span class="pill canandaigua">Canandaigua</span></td>
-          <td class="opt"><a href="https://www.vrbo.com/4654451?chkin=2026-10-15&amp;chkout=2026-10-18&amp;adults=2" target="_blank" rel="noopener">VRBO 4654451 &rarr;</a><span class="note">$287/night, all fees included.</span></td>
+          <td class="opt"><a href="https://www.vrbo.com/4654451?chkin=2026-10-15&amp;chkout=2026-10-18&amp;adults=2" target="_blank" rel="noopener">VRBO 4654451 &rarr;</a><span class="pickchip">🥉 Best if Canandaigua</span><span class="note">$287/night, all fees included.</span></td>
           <td data-sort="2026-10-15">15&ndash;18 Oct</td>
           <td data-sort="862.00">$862.00</td>
           <td data-sort="287.33">$287</td>
@@ -1755,7 +1795,7 @@ table.costs td.opt{font-family:"Bricolage Grotesque",sans-serif; font-size:15px;
         </tr>
         <tr data-region="Geneva">
           <td class="reg"><span class="pill geneva">Geneva</span></td>
-          <td class="opt"><a href="https://linkcenterus.derbysoftca.com/dplatform-linkcenter/booking.htm?hotelCode=WYNDHAM-90687&amp;checkInDate=2026-10-09&amp;checkOutDate=2026-10-12" target="_blank" rel="noopener">41 Lakefront, Trademark by Wyndham &rarr;</a><span class="note">$793.02 + $107.05 tax. Two double beds, city view. Pay at hotel.</span></td>
+          <td class="opt"><a href="https://www.wyndhamhotels.com/trademark/geneva-new-york/41-lakefront-hotel-trademark-collection/rooms-rates?brand_id=TQ&amp;checkInDate=10/9/2026&amp;checkOutDate=10/12/2026&amp;adults=2&amp;rooms=1&amp;hotel_id=07447" target="_blank" rel="noopener">41 Lakefront, Trademark by Wyndham &rarr;</a><span class="note">$793.02 + $107.05 tax. Two double beds, city view. Pay at hotel.</span></td>
           <td data-sort="2026-10-09">9&ndash;12 Oct</td>
           <td data-sort="900.07">$900.07</td>
           <td data-sort="300.02">$300</td>
@@ -1767,23 +1807,23 @@ table.costs td.opt{font-family:"Bricolage Grotesque",sans-serif; font-size:15px;
           <td data-sort="1288.19">$1,288.19</td>
           <td data-sort="429.40">$429</td>
         </tr>
-        <tr data-region="Region unconfirmed">
-          <td class="reg"><span class="pill region">Region unconfirmed</span></td>
-          <td class="opt"><a href="https://ferienwohnung.check24.de/search/The%20Main%20Street%20Retreat-35774132/2026-10-16/2026-10-19/%5BA%7CA%5D/homes.html" target="_blank" rel="noopener">The Main Street Retreat &rarr;</a><span class="note">Free cancellation to 2 Oct. Listing does not state the town &mdash; worth checking before booking.</span></td>
+        <tr data-region="Canandaigua">
+          <td class="reg"><span class="pill canandaigua">Canandaigua</span></td>
+          <td class="opt"><a href="https://ferienwohnung.check24.de/search/The%20Main%20Street%20Retreat-35774132/2026-10-16/2026-10-19/%5BA%7CA%5D/homes.html" target="_blank" rel="noopener">The Main Street Retreat &rarr;</a><span class="note">Free cancellation to 2 Oct, booked through FeWo-direkt.</span></td>
           <td data-sort="2026-10-16">16&ndash;19 Oct</td>
           <td data-sort="954.35">&euro;829.87<span class="usd">~$954</span></td>
           <td data-sort="318.12">$318</td>
         </tr>
-        <tr data-region="Watkins Glen">
+        <tr data-region="Watkins Glen" data-pick="1" class="pick">
           <td class="reg"><span class="pill watkins">Watkins Glen</span></td>
-          <td class="opt"><a href="https://www.vrbo.com/7080117ha?chkin=2026-10-15&amp;chkout=2026-10-18&amp;adults=2" target="_blank" rel="noopener">VRBO 7080117 &rarr;</a><span class="note">$233/night + $83.88 tax. Cheapest of the Watkins Glen set.</span></td>
+          <td class="opt"><a href="https://www.vrbo.com/7080117ha?chkin=2026-10-15&amp;chkout=2026-10-18&amp;adults=2" target="_blank" rel="noopener">VRBO 7080117 &rarr;</a><span class="pickchip">🥇 Best value</span><span class="note">$233/night + $83.88 tax. Cheapest of the Watkins Glen set.</span></td>
           <td data-sort="2026-10-15">15&ndash;18 Oct</td>
           <td data-sort="782.88">$782.88</td>
           <td data-sort="260.96">$261</td>
         </tr>
-        <tr data-region="Watkins Glen">
+        <tr data-region="Watkins Glen" data-pick="4" class="pick">
           <td class="reg"><span class="pill watkins">Watkins Glen</span></td>
-          <td class="opt"><a href="https://www.airbnb.com/rooms/18776389?adults=2&amp;check_in=2026-10-15&amp;check_out=2026-10-18" target="_blank" rel="noopener">Airbnb 18776389 &mdash; 304 3rd St &rarr;</a><span class="note">4.69 from 127 reviews. Free cancellation within 24 h. Same address as the $942 VRBO below.</span></td>
+          <td class="opt"><a href="https://www.airbnb.com/rooms/18776389?adults=2&amp;check_in=2026-10-15&amp;check_out=2026-10-18" target="_blank" rel="noopener">Airbnb 18776389 &mdash; 304 3rd St &rarr;</a><span class="pickchip"> Same flat, $52 less</span><span class="note">4.69 from 127 reviews. Free cancellation within 24 h. Same address as the $942 VRBO below.</span></td>
           <td data-sort="2026-10-15">15&ndash;18 Oct</td>
           <td data-sort="890.40">$890.40</td>
           <td data-sort="296.80">$297</td>
@@ -2121,7 +2161,8 @@ Maps are schematic: pin positions are geographically placed, road shapes are sim
         panel.querySelectorAll('.fbtn').forEach(function(b){ b.classList.toggle('on', b === btn); });
         var want = btn.dataset.region;
         rows.forEach(function(r){
-          r.hidden = want !== 'all' && r.dataset.region !== want;
+          r.hidden = want === 'picks' ? !r.dataset.pick
+                   : want !== 'all' && r.dataset.region !== want;
         });
       });
     });
