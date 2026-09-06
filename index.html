@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Four Ways Out of Jersey City</title>
+<title>Five Ways to Spend It</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=DM+Mono:wght@400;500&display=swap">
@@ -13,6 +13,7 @@
   --routeB:#1B6472; --routeB-soft:#D6E7EA;
   --routeC:#96501F; --routeC-soft:#F1E2D4;
   --routeD:#3F5486; --routeD-soft:#DCE2F0;
+  --routeE:#6A4B93; --routeE-soft:#E6DEF2;
   --shadow:0 1px 2px rgba(22,27,24,.06), 0 8px 24px -14px rgba(22,27,24,.30);
 }
 @media (prefers-color-scheme: dark){
@@ -23,8 +24,10 @@
     --routeB:#57B4C4; --routeB-soft:#12292E;
     --routeC:#DE9455; --routeC-soft:#33210F;
     --routeD:#93A8DC; --routeD-soft:#171D2E;
+    --routeE:#B79BE0; --routeE-soft:#241B33;
     --routeC:#DE9455; --routeC-soft:#33210F;
     --routeD:#93A8DC; --routeD-soft:#171D2E;
+    --routeE:#B79BE0; --routeE-soft:#241B33;
     --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 30px -16px rgba(0,0,0,.8);
   }
 }
@@ -35,6 +38,7 @@
   --routeB:#57B4C4; --routeB-soft:#12292E;
   --routeC:#DE9455; --routeC-soft:#33210F;
   --routeD:#93A8DC; --routeD-soft:#171D2E;
+  --routeE:#B79BE0; --routeE-soft:#241B33;
   --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 30px -16px rgba(0,0,0,.8);
 }
 
@@ -226,13 +230,14 @@ body.locked .wrap{filter:blur(7px); pointer-events:none; user-select:none}
 .leadin h2{font-size:25px; font-weight:700; letter-spacing:-.015em; margin:0}
 .leadin p{margin:8px 0 0; color:var(--muted); max-width:62ch}
 .chooser{display:grid; grid-template-columns:repeat(auto-fit,minmax(268px,1fr)); gap:18px; margin-top:26px}
-.chooser.two{grid-template-columns:repeat(auto-fit,minmax(310px,1fr)); max-width:900px}
+.chooser.two{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
 .optcard .desc{font-family:"Bricolage Grotesque",sans-serif; font-weight:700; font-size:18px; color:var(--ink)}
 .optcard{display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line);
   border-radius:6px; box-shadow:var(--shadow); padding:20px 20px 18px; transition:border-color .2s, transform .2s}
 .optcard:hover{transform:translateY(-2px); border-color:var(--faint)}
 .optcard.a{--accent:var(--routeA)} .optcard.b{--accent:var(--routeB)}
 .optcard.catskills{--accent:var(--routeC)} .optcard.philadelphia{--accent:var(--routeD)}
+.optcard.home{--accent:var(--routeE)}
 .optcard .onum{font-family:"DM Mono",monospace; font-size:10.5px; letter-spacing:.16em;
   text-transform:uppercase; color:var(--faint)}
 .optcard h3{display:flex; align-items:center; gap:8px; margin:9px 0 0; font-size:20px; font-weight:700; letter-spacing:-.01em; line-height:1.2}
@@ -463,11 +468,11 @@ table.costs td.opt{font-family:"Bricolage Grotesque",sans-serif; font-size:15px;
 <div class="wrap">
 <header class="top">
   <div class="eyebrow">Saturday, September 19, 2026 · departing Jersey City</div>
-  <h1>Four Ways Out of Jersey City<em>Pick a direction.</em></h1>
-  <p class="lede">Four destinations for the weekend. Two are day trips out and back — one a
-  foliage excursion, the other fruit picking and views — and both end with a stop at a
-  convenient Costco for gas and a chance to use the $50 check. The Catskills can be a day, a
-  night or a weekend; Philadelphia can be done by train or by car.</p>
+  <h1>Five Ways to Spend It<em>Four of them involve leaving.</em></h1>
+  <p class="lede">Five ways to spend the weekend. Two are day trips out and back — one a foliage
+  excursion, the other fruit picking and views — and both end with a stop at a convenient Costco
+  for gas and a chance to use the $50 check. The Catskills can be a day, a night or a weekend;
+  Philadelphia can be done by train or by car; and one of them never leaves the couch.</p>
   <p class="lede">Times are estimates throughout and flexible to what we want to do and when we
   want to start. Nothing is booked.</p>
 
@@ -523,6 +528,15 @@ table.costs td.opt{font-family:"Bricolage Grotesque",sans-serif; font-size:15px;
       <div class="meta"><span>Base <b>Sat Sep 19</b></span><span>Versions <b>2</b></span></div>
       <div class="badges"><span class="badge acc">&#128642; Train or car</span></div>
       <button data-route="philadelphia" data-version="vamtrak">View itinerary</button>
+    </div>
+    <div class="optcard home">
+      <div class="onum">Trippin&#39;</div>
+      <h3>At home</h3>
+      <div class="where">Jersey City &middot; the couch</div>
+      <p class="desc">Munchies + Puffies</p>
+      <div class="meta"><span>Base <b>Sat Sep 19</b></span><span>Driving <b>0 mi</b></span></div>
+      <div class="badges"><span class="badge acc">&#128684; No car needed</span></div>
+      <button data-route="home" data-version="vhome">View itinerary</button>
     </div>
   </div>
 </div>
@@ -1243,6 +1257,27 @@ table.costs td.opt{font-family:"Bricolage Grotesque",sans-serif; font-size:15px;
 </div>
 </section>
 
+
+<section class="route" id="route-home" role="tabpanel" style="--accent:var(--routeE)">
+<div class="routehead">
+  <button class="back">&#8592; All destinations</button>
+  <h2>Trippin&#39;</h2>
+  <span class="ctx">At home &middot; no travel</span>
+</div>
+<div class="version vhome on">
+<div class="tripbody">
+  <div class="varhead">
+    <div class="vlab">Saturday, September 19</div>
+    <h3>Munchies + Puffies</h3>
+    <p>The one option that requires no rental car, no reservations and no alarm.</p>
+    <span class="badge acc">&#128684; No car needed</span>
+  </div>
+  <ol class="sched">
+    <li class="star"><span class="t">All day</span><span class="w"><b>&#11088; Let&#39;s go blow some clouds</b></span></li>
+  </ol>
+</div>
+</div>
+</section>
 
 <!-- ============================= RENTAL ============================= -->
 <section class="view" id="view-car" role="tabpanel" aria-labelledby="nav-car" style="--accent:var(--routeA)">
