@@ -405,7 +405,6 @@ body.locked .wrap{filter:blur(7px); pointer-events:none; user-select:none}
 .hotels{margin:34px 0 0; padding:24px; background:var(--surface); border:1px solid var(--line);
   border-radius:6px; box-shadow:var(--shadow)}
 .hotels h4{margin:0; font-family:"Bricolage Grotesque",sans-serif; font-size:17px; font-weight:700}
-.hotels h4.rsub{margin-top:34px; padding-top:24px; border-top:1px solid var(--line)}
 .datewarn{margin:16px 0 0; padding:14px 16px; background:var(--paper); border:1px solid var(--line);
   border-left:3px solid var(--accent); border-radius:5px; color:var(--muted); font-size:15px}
 .datewarn b{color:var(--ink); font-family:"Bricolage Grotesque",sans-serif; font-weight:700}
@@ -436,6 +435,7 @@ table.hoteltable td .usd{display:block; color:var(--faint); font-size:11px; marg
 .pill.canandaigua{color:var(--routeA); border-color:var(--routeA)}
 .pill.geneva{color:var(--routeG); border-color:var(--routeG)}
 .pill.seneca{color:var(--routeC); border-color:var(--routeC)}
+.pill.hammondsport{color:var(--routeE); border-color:var(--routeE)}
 .picks{margin:18px 0 0; padding:18px 20px; background:var(--paper); border:1px solid var(--accent);
   border-radius:6px}
 .picks h5{margin:0 0 12px; font-family:"DM Mono",monospace; font-size:10.5px; letter-spacing:.14em;
@@ -452,13 +452,6 @@ table.hoteltable tr.pick td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
   letter-spacing:.1em; text-transform:uppercase; color:var(--accent); border:1px solid var(--accent);
   border-radius:999px; padding:2px 8px; white-space:nowrap; vertical-align:2px}
 .tblnote{margin:14px 0 0; color:var(--muted); font-size:14.5px; max-width:74ch}
-.regions{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px; margin-top:18px}
-.regcard{background:var(--paper); border:1px solid var(--line); border-radius:5px; padding:16px 18px}
-.regcard .rhead{display:flex; flex-wrap:wrap; align-items:center; gap:8px}
-.regcard .rtag{font-family:"Bricolage Grotesque",sans-serif; font-weight:700; font-size:14.5px}
-.regcard p{margin:11px 0 0; color:var(--muted); font-size:15px}
-.regcard ul{list-style:none; margin:12px 0 0; padding:11px 0 0; border-top:1px solid var(--line)}
-.regcard li{font-family:"DM Mono",monospace; font-size:11.5px; color:var(--muted); padding:3px 0}
 @media(max-width:560px){.hotels{padding:18px}
   .fbtn{padding:10px 14px; font-size:12px}
   table.hoteltable td.opt{min-width:200px}}
@@ -1679,16 +1672,20 @@ table.costs td.opt{font-family:"Bricolage Grotesque",sans-serif; font-size:15px;
           the state park, wineries and boating all concentrated in one place, at $261 a night
           against $297&ndash;314 for the other Watkins Glen options. Check the reviews and the
           exact location before anything else.</span></div></li>
-        <li><span class="m">&#129352;</span><div><b>The Franklin &mdash; $749.10</b>
+        <li><span class="m">&#129352;</span><div><b>Hammondsport &mdash; JS Hubbs Guest House &middot; $945.44</b>
+          <span>Your pick. A guest-house suite on Keuka Lake, quoted at $945.44 &mdash; about
+          &euro;813.91. Two things to check: the dates are 16&ndash;19 October, not 15&ndash;18
+          like the rest of the Hammondsport set, and it is the third dearest of that group.</span></div></li>
+        <li><span class="m">&#129353;</span><div><b>The Franklin &mdash; $749.10</b>
           <span>The best inn option: three nights with breakfast, a queen, a fireplace and a
           proper bathroom. You are paying for the lodging experience rather than a lake house,
           which is fine if you are out exploring all day. Better than an $860&ndash;900 generic
           hotel.</span></div></li>
-        <li><span class="m">&#129353;</span><div><b>Canandaigua &mdash; VRBO 4654451 &middot; $862</b>
+        <li><span class="m">4</span><div><b>Canandaigua &mdash; VRBO 4654451 &middot; $862</b>
           <span>The one if Canandaigua becomes the base, and stronger still if it is walkable to
           the lake and downtown. That matches what you actually want: hiking, walking the
           shoreline, jet ski, a lake cruise, and a historic little city to wander.</span></div></li>
-        <li><span class="m">4</span><div><b>Watkins Glen &mdash; 304 3rd St, Airbnb &middot; $890.40</b>
+        <li><span class="m">5</span><div><b>Watkins Glen &mdash; 304 3rd St, Airbnb &middot; $890.40</b>
           <span>Better than the $942.40 VRBO for what looks like the same flat &mdash; $52 less at
           the same address. Only worth the premium over the $782.88 option if it is materially
           nicer.</span></div></li>
@@ -1700,6 +1697,7 @@ table.costs td.opt{font-family:"Bricolage Grotesque",sans-serif; font-size:15px;
       <button class="fbtn" data-region="picks">&#11088; Top picks</button>
       <button class="fbtn" data-region="Canandaigua">Canandaigua</button>
       <button class="fbtn" data-region="Geneva">Geneva</button>
+      <button class="fbtn" data-region="Hammondsport">Hammondsport</button>
       <button class="fbtn" data-region="Watkins Glen">Watkins Glen</button>
       <button class="fbtn" data-region="Seneca Falls">Seneca Falls</button>
     </div>
@@ -1714,9 +1712,9 @@ table.costs td.opt{font-family:"Bricolage Grotesque",sans-serif; font-size:15px;
           <th class="sortable" data-type="num">Per night</th>
         </tr></thead>
         <tbody>
-        <tr data-region="Canandaigua" data-pick="2" class="pick">
+        <tr data-region="Canandaigua" data-pick="3" class="pick">
           <td class="reg"><span class="pill canandaigua">Canandaigua</span></td>
-          <td class="opt"><a href="https://via.eviivo.com/en-en/Google/b14424?startdate=2026-10-15&amp;enddate=2026-10-18&amp;adults1=2&amp;children1=0&amp;currency=USD&amp;roomtypeid=125160&amp;rateplanid=315758" target="_blank" rel="noopener">The Franklin &mdash; Comfort Ensuite &rarr;</a><span class="pickchip">🥈 Best inn</span><span class="note">$660 + $89.10 fees. Breakfast included, queen, electric fireplace.</span></td>
+          <td class="opt"><a href="https://via.eviivo.com/en-en/Google/b14424?startdate=2026-10-15&amp;enddate=2026-10-18&amp;adults1=2&amp;children1=0&amp;currency=USD&amp;roomtypeid=125160&amp;rateplanid=315758" target="_blank" rel="noopener">The Franklin &mdash; Comfort Ensuite &rarr;</a><span class="pickchip">🥉 Best inn</span><span class="note">$660 + $89.10 fees. Breakfast included, queen, electric fireplace.</span></td>
           <td data-sort="2026-10-15">15&ndash;18 Oct</td>
           <td data-sort="749.10">$749.10</td>
           <td data-sort="249.70">$250</td>
@@ -1728,9 +1726,9 @@ table.costs td.opt{font-family:"Bricolage Grotesque",sans-serif; font-size:15px;
           <td data-sort="741.37">&euro;644.67<span class="usd">~$741</span></td>
           <td data-sort="247.12">$247</td>
         </tr>
-        <tr data-region="Canandaigua" data-pick="3" class="pick">
+        <tr data-region="Canandaigua" data-pick="4" class="pick">
           <td class="reg"><span class="pill canandaigua">Canandaigua</span></td>
-          <td class="opt"><a href="https://www.vrbo.com/4654451?chkin=2026-10-15&amp;chkout=2026-10-18&amp;adults=2" target="_blank" rel="noopener">VRBO 4654451 &rarr;</a><span class="pickchip">🥉 Best if Canandaigua</span><span class="note">$287/night, all fees included.</span></td>
+          <td class="opt"><a href="https://www.vrbo.com/4654451?chkin=2026-10-15&amp;chkout=2026-10-18&amp;adults=2" target="_blank" rel="noopener">VRBO 4654451 &rarr;</a><span class="pickchip"> Best if Canandaigua</span><span class="note">$287/night, all fees included.</span></td>
           <td data-sort="2026-10-15">15&ndash;18 Oct</td>
           <td data-sort="862.00">$862.00</td>
           <td data-sort="287.33">$287</td>
@@ -1784,7 +1782,7 @@ table.costs td.opt{font-family:"Bricolage Grotesque",sans-serif; font-size:15px;
           <td data-sort="782.88">$782.88</td>
           <td data-sort="260.96">$261</td>
         </tr>
-        <tr data-region="Watkins Glen" data-pick="4" class="pick">
+        <tr data-region="Watkins Glen" data-pick="5" class="pick">
           <td class="reg"><span class="pill watkins">Watkins Glen</span></td>
           <td class="opt"><a href="https://www.airbnb.com/rooms/18776389?adults=2&amp;check_in=2026-10-15&amp;check_out=2026-10-18" target="_blank" rel="noopener">Airbnb 18776389 &mdash; 304 3rd St &rarr;</a><span class="pickchip"> Same flat, $52 less</span><span class="note">4.69 from 127 reviews. Free cancellation within 24 h. Same address as the $942 VRBO below.</span></td>
           <td data-sort="2026-10-15">15&ndash;18 Oct</td>
@@ -1812,40 +1810,75 @@ table.costs td.opt{font-family:"Bricolage Grotesque",sans-serif; font-size:15px;
           <td data-sort="747.00">$747.00</td>
           <td data-sort="249.00">$249</td>
         </tr>
+        <tr data-region="Hammondsport">
+          <td class="reg"><span class="pill hammondsport">Hammondsport</span></td>
+          <td class="opt"><a href="https://www.airbnb.com/rooms/896348439825865861?adults=2&amp;check_in=2026-10-15&amp;check_out=2026-10-18" target="_blank" rel="noopener">Airbnb 896348439825865861 &rarr;</a><span class="note">Cheapest quote in the whole table.</span></td>
+          <td data-sort="2026-10-15">15&ndash;18 Oct</td>
+          <td data-sort="699.86">$699.86</td>
+          <td data-sort="233.29">$233</td>
+        </tr>
+        <tr data-region="Hammondsport">
+          <td class="reg"><span class="pill hammondsport">Hammondsport</span></td>
+          <td class="opt"><a href="https://www.vrbo.com/98304?chkin=2026-10-15&amp;chkout=2026-10-18&amp;adults=2" target="_blank" rel="noopener">Keuka Lake Escape For You &mdash; VRBO 98304 &rarr;</a><span class="note">Second cheapest overall.</span></td>
+          <td data-sort="2026-10-15">15&ndash;18 Oct</td>
+          <td data-sort="712.32">$712.32</td>
+          <td data-sort="237.44">$237</td>
+        </tr>
+        <tr data-region="Hammondsport">
+          <td class="reg"><span class="pill hammondsport">Hammondsport</span></td>
+          <td class="opt"><a href="https://www.vrbo.com/4471456?chkin=2026-10-15&amp;chkout=2026-10-18&amp;adults=2" target="_blank" rel="noopener">Finger Lakes wine country, Keuka Lake &mdash; VRBO 4471456 &rarr;</a><span class="note">$874 for three nights.</span></td>
+          <td data-sort="2026-10-15">15&ndash;18 Oct</td>
+          <td data-sort="874.00">$874.00</td>
+          <td data-sort="291.33">$291</td>
+        </tr>
+        <tr data-region="Hammondsport">
+          <td class="reg"><span class="pill hammondsport">Hammondsport</span></td>
+          <td class="opt"><a href="https://book.hammondsportlodging.com/listings/456138?city=Hammondsport&amp;start=2026-10-15&amp;end=2026-10-18&amp;numberOfGuests=2" target="_blank" rel="noopener">Hammondsport Lodging 456138 &rarr;</a><span class="note">$741.30 room + $50 cleaning + $94.95 tax + $14.24 channel fee. Booked direct.</span></td>
+          <td data-sort="2026-10-15">15&ndash;18 Oct</td>
+          <td data-sort="900.49">$900.49</td>
+          <td data-sort="300.16">$300</td>
+        </tr>
+        <tr data-region="Hammondsport" data-pick="2" class="pick">
+          <td class="reg"><span class="pill hammondsport">Hammondsport</span></td>
+          <td class="opt"><a href="https://ferienwohnung.check24.de/search/Junior%27s%20Suite%20at%20JS%20Hubbs%20Guest%20House-39093134/2026-10-16/2026-10-19/%5BA%7CA%5D/homes.html" target="_blank" rel="noopener">JS Hubbs Guest House &mdash; Junior&#39;s Suite &rarr;</a><span class="pickchip">🥈 Your pick</span><span class="note">Quoted $945.44, about &euro;813.91. Note the dates: 16&ndash;19 Oct, not 15&ndash;18 like the rest of Hammondsport.</span></td>
+          <td data-sort="2026-10-16">16&ndash;19 Oct</td>
+          <td data-sort="945.44">$945.44</td>
+          <td data-sort="315.15">$315</td>
+        </tr>
+        <tr data-region="Hammondsport">
+          <td class="reg"><span class="pill hammondsport">Hammondsport</span></td>
+          <td class="opt"><a href="https://www.airbnb.com/rooms/26948789?adults=2&amp;check_in=2026-10-15&amp;check_out=2026-10-18" target="_blank" rel="noopener">Airbnb 26948789 &rarr;</a><span class="note"></span></td>
+          <td data-sort="2026-10-15">15&ndash;18 Oct</td>
+          <td data-sort="984.48">$984.48</td>
+          <td data-sort="328.16">$328</td>
+        </tr>
+        <tr data-region="Hammondsport">
+          <td class="reg"><span class="pill hammondsport">Hammondsport</span></td>
+          <td class="opt"><a href="https://www.airbnb.com/rooms/1654311149830645884?adults=2&amp;check_in=2026-10-15&amp;check_out=2026-10-18" target="_blank" rel="noopener">Airbnb 1654311149830645884 &rarr;</a><span class="note"></span></td>
+          <td data-sort="2026-10-15">15&ndash;18 Oct</td>
+          <td data-sort="1005.76">$1,005.76</td>
+          <td data-sort="335.25">$335</td>
+        </tr>
+        <tr data-region="Hammondsport">
+          <td class="reg"><span class="pill hammondsport">Hammondsport</span></td>
+          <td class="opt"><a href="https://www.airbnb.com/rooms/1364667349547612767?adults=2&amp;check_in=2026-10-15&amp;check_out=2026-10-18" target="_blank" rel="noopener">Airbnb 1364667349547612767 &rarr;</a><span class="note"></span></td>
+          <td data-sort="2026-10-15">15&ndash;18 Oct</td>
+          <td data-sort="1014.72">$1,014.72</td>
+          <td data-sort="338.24">$338</td>
+        </tr>
+        <tr data-region="Hammondsport">
+          <td class="reg"><span class="pill hammondsport">Hammondsport</span></td>
+          <td class="opt"><a href="https://www.vrbo.com/845923?chkin=2026-10-15&amp;chkout=2026-10-18&amp;adults=2" target="_blank" rel="noopener">Waterfront Keuka Lake &mdash; VRBO 845923 &rarr;</a><span class="note">Boat slip, two balconies, third floor. Dearest of the Hammondsport set.</span></td>
+          <td data-sort="2026-10-15">15&ndash;18 Oct</td>
+          <td data-sort="1096.00">$1,096.00</td>
+          <td data-sort="365.33">$365</td>
+        </tr>
         </tbody>
       </table>
     </div>
     <p class="tblnote">Three nights in every case, two adults. Totals are as quoted including
     taxes and fees where the source showed them. Nothing here is booked.</p>
 
-    <h4 class="rsub">Which town gives you the most to do</h4>
-    <div class="regions">
-    <div class="regcard">
-      <div class="rhead"><span class="pill watkins">Watkins Glen</span><span class="rtag">Hikes and waterfalls</span></div>
-      <p>The gorge trail starts in the village &mdash; nineteen waterfalls on foot from Main Street, which none of the others can claim. Seneca Lake pier and harbour for boats, a small walkable centre with cafes, and the wine trail begins here.</p>
-      <ul><li>Hikes &amp; waterfalls: best of the four</li><li>Lake access: good &mdash; pier, harbour, boats</li><li>Historic walking: modest</li><li>Niagara: farthest, roughly 2&frac34;&ndash;3 h</li></ul>
-    </div>
-    <div class="regcard">
-      <div class="rhead"><span class="pill canandaigua">Canandaigua</span><span class="rtag">Lake days and grand houses</span></div>
-      <p>A long Main Street with Sonnenberg Gardens and the Granger Homestead, plus the City Pier and Kershaw Park right on the water for swimming and boat cruises. Grimes Glen and the Bristol Hills are close for walking.</p>
-      <ul><li>Historic walking: strong</li><li>Lake access: best of the four &mdash; beach, pier, cruises</li><li>Hikes: decent nearby</li><li>Niagara: closest, roughly 1&frac34;&ndash;2 h</li></ul>
-    </div>
-    <div class="regcard">
-      <div class="rhead"><span class="pill geneva">Geneva</span><span class="rtag">The all-rounder</span></div>
-      <p>Historic South Main Street, the Smith Opera House and the college, with Seneca Lake State Park on the waterfront and the densest restaurant scene of the four. Sits between the Seneca and Cayuga wine trails, so it drives well in both directions.</p>
-      <ul><li>Cafes &amp; restaurants: best of the four</li><li>Historic walking: strong</li><li>Lake access: good &mdash; state park waterfront</li><li>Niagara: middling, roughly 2&ndash;2&frac12; h</li></ul>
-    </div>
-    <div class="regcard">
-      <div class="rhead"><span class="pill seneca">Seneca Falls</span><span class="rtag">History, least outdoors</span></div>
-      <p>The most concentrated history: Women&#39;s Rights National Historical Park, the canal, and the town behind It&#39;s a Wonderful Life. Very walkable. But it is the weakest for lake recreation and hiking, with Montezuma nearby for birding rather than trails.</p>
-      <ul><li>Historic walking: best of the four</li><li>Cafes: fine, small</li><li>Lake &amp; hikes: weakest of the four</li><li>Niagara: middling, roughly 2&ndash;2&frac12; h</li></ul>
-    </div>
-    </div>
-    <p class="tblnote"><b>Short version.</b> Watkins Glen if the waterfalls and the gorge are the
-    point. Canandaigua for lake days, grand houses and the shortest run to Niagara. Geneva if you
-    want the best food and a base that drives well in both directions. Seneca Falls for history,
-    at the cost of the outdoors. Drive times are rough &mdash; check them against your actual
-    base before booking.</p>
   </div>
 
   <div class="addons">
