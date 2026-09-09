@@ -565,3 +565,8 @@ table.costs td.opt{font-family:"Bricolage Grotesque",sans-serif; font-size:15px;
   border-radius:50%; background:var(--accent); opacity:.55}
 .act li b{color:var(--ink); font-weight:500}
 @media(max-width:560px){.actgrid{grid-template-columns:1fr}}
+
+.emptyslate{margin-top:26px; padding:44px 24px; border:1px dashed var(--line); border-radius:6px;
+  text-align:center}
+.emptyslate p{margin:0; color:var(--faint); font-family:"DM Mono",monospace; font-size:12.5px;
+  letter-spacing:.08em}
