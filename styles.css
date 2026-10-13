@@ -570,3 +570,37 @@ table.costs td.opt{font-family:"Bricolage Grotesque",sans-serif; font-size:15px;
   text-align:center}
 .emptyslate p{margin:0; color:var(--faint); font-family:"DM Mono",monospace; font-size:12.5px;
   letter-spacing:.08em}
+
+/* ---------- itinerary: facts, weather, packing, checklist ---------- */
+.facts{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1px;
+  margin:26px 0 0; padding:0; background:var(--line); border:1px solid var(--line); border-radius:6px;
+  overflow:hidden}
+.facts > div{background:var(--surface); padding:13px 16px}
+.facts dt{font-family:"DM Mono",monospace; font-size:10.5px; letter-spacing:.13em;
+  text-transform:uppercase; color:var(--faint)}
+.facts dd{margin:4px 0 0; font-size:15.5px; color:var(--ink)}
+.wx{display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:10px; margin-top:18px}
+.wx > div{background:var(--surface); border:1px solid var(--line); border-radius:5px; padding:12px 14px;
+  display:flex; flex-direction:column; gap:3px}
+.wx .d{font-family:"Bricolage Grotesque",sans-serif; font-weight:700; font-size:14.5px}
+.wx .s{color:var(--muted); font-size:14px}
+.wx .t{font-family:"DM Mono",monospace; font-size:13px; color:var(--accent);
+  font-variant-numeric:tabular-nums}
+.wxnote{margin:8px 0 0; font-family:"DM Mono",monospace; font-size:11px; color:var(--faint)}
+.packgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(265px,1fr)); gap:16px; margin-top:16px}
+.packcard{background:var(--surface); border:1px solid var(--line); border-radius:6px;
+  padding:16px 18px; box-shadow:var(--shadow)}
+.packcard h5{margin:0 0 11px; font-family:"Bricolage Grotesque",sans-serif; font-size:15.5px;
+  font-weight:700; padding-bottom:10px; border-bottom:1px solid var(--line)}
+.packcard ul{list-style:none; margin:0; padding:0}
+.packcard li{position:relative; padding:6px 0 6px 22px; color:var(--muted); font-size:15px}
+.packcard li::before{content:"\25A1"; position:absolute; left:2px; top:5px; color:var(--accent);
+  font-size:13px; opacity:.75}
+.packcard li b{color:var(--ink); font-weight:500}
+.checklist{list-style:none; margin:16px 0 0; padding:18px 20px; background:var(--surface);
+  border:1px solid var(--line); border-radius:6px; box-shadow:var(--shadow)}
+.checklist li{position:relative; padding:8px 0 8px 26px; color:var(--muted); font-size:15.5px;
+  border-bottom:1px solid var(--line)}
+.checklist li:last-child{border-bottom:none}
+.checklist li::before{content:"\25A1"; position:absolute; left:2px; top:7px; color:var(--accent);
+  font-size:15px}
