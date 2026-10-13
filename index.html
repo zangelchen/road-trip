@@ -33,70 +33,19 @@
 
   <div class="topnav" role="tablist" aria-label="Sections">
     <button id="nav-plan" role="tab" aria-selected="true" aria-controls="view-plan">Itinerary</button>
-    <button id="nav-car" role="tab" aria-selected="false" aria-controls="view-car">&#128663; Rental Car</button>
     <button id="nav-other" role="tab" aria-selected="false" aria-controls="view-other">&#128193; Other Options</button>
   </div>
 </header>
 
 <section class="view on" id="view-plan" role="tabpanel" aria-labelledby="nav-plan">
 
-<div id="chooser" class="chooser-wrap">
-  <div class="leadin">
-    <h2>The plan</h2>
-    <p>Two trips, decided. Saturday the 19th at home; three nights in the Finger Lakes over
-    Columbus Day weekend. Everything else we considered is under Other Options.</p>
-  </div>
-  <div class="chooser two">
-    <div class="optcard home">
-      <div class="onum">Trippin&#39;</div>
-      <h3>At home</h3>
-      <div class="where">Jersey City &middot; the couch</div>
-      <p class="desc">Munchies + Puffies</p>
-      <div class="meta"><span>Base <b>Sat Sep 19</b></span><span>Driving <b>0 mi</b></span></div>
-      <div class="badges"><span class="badge acc">&#128684; No car needed</span></div>
-      <button data-route="home" data-version="vhome">View itinerary</button>
-    </div>
-    <div class="optcard fingerlakes">
-      <div class="onum">Finger Lakes</div>
-      <h3>Hammondsport &amp; Keuka Lake</h3>
-      <div class="where">Keuka Lake &middot; NY</div>
-      <p class="desc">Waterfalls + Wine + Cabin</p>
-      <div class="meta"><span>Dates <b>Oct 15&ndash;18</b></span><span>Nights <b>3</b></span></div>
-      <div class="badges"><span class="badge acc">&#127863; One base, three nights</span></div>
-      <button data-route="fingerlakes" data-version="vfl">View itinerary</button>
-    </div>
-  </div>
-</div>
-
 <!-- ============================= CHOSEN ITINERARIES ============================= -->
 
 
 
-<section class="route" id="route-home" role="tabpanel" aria-label="Trippin' — a day at home" style="--accent:var(--routeE)">
+<section class="route on" id="route-fingerlakes" role="tabpanel" aria-label="Finger Lakes" style="--accent:var(--routeG)">
 <div class="routehead">
-  <button class="back">&#8592; All destinations</button>
-  <h2>Trippin&#39;</h2>
-  <span class="ctx">At home &middot; no travel</span>
-</div>
-<div class="version vhome on">
-<div class="tripbody">
-  <div class="varhead">
-    <div class="vlab">Saturday, September 19</div>
-    <h3>Munchies + Puffies</h3>
-    <p>The one option that requires no rental car, no reservations and no alarm.</p>
-    <span class="badge acc">&#128684; No car needed</span>
-  </div>
-  <ol class="sched">
-    <li class="star"><span class="t">All day</span><span class="w"><b>&#11088; Let&#39;s go blow some clouds</b></span></li>
-  </ol>
-</div>
-</div>
-</section>
-
-<section class="route" id="route-fingerlakes" role="tabpanel" aria-label="Finger Lakes" style="--accent:var(--routeG)">
-<div class="routehead">
-  <button class="back">&#8592; All destinations</button>
-  <h2>Finger Lakes</h2>
+    <h2>Finger Lakes</h2>
   <span class="ctx">Thu Oct 15 &rarr; Sun Oct 18 &middot; three nights in Hammondsport</span>
   <div class="seg" role="tablist" aria-label="Finger Lakes sections">
     <button role="tab" data-version="vfl" aria-selected="true">Itinerary</button>
@@ -118,105 +67,119 @@
   <div class="varhead">
     <div class="vlab">Thursday 15 &rarr; Sunday 18 October 2026</div>
     <h3>Finger Lakes &amp; Niagara</h3>
-    <p>Three nights in Hammondsport, out and back from Newark, with one long day at the falls
-    in the middle.</p>
+    <p>Three nights in Hammondsport, out and back from Newark, with one long day at the falls in
+    the middle. Pick a day below to see its plan.</p>
   </div>
 
-  <dl class="facts">
-      <div><dt>Start and end</dt><dd>EWR, car rental</dd></div>
-      <div><dt>Lodging</dt><dd>JSHubb Guest House, Hammondsport &middot; Thu&ndash;Sun, 3 nights</dd></div>
-      <div><dt>Theme</dt><dd>Relaxed, unrushed</dd></div>
-  </dl>
-
-  <div class="wx">
-      <div><span class="d">Thu 15</span><span class="s">Dry</span><span class="t">~55&deg;F</span></div>
-      <div><span class="d">Fri 16</span><span class="s">~70% rain</span><span class="t">~58&deg;F</span></div>
-      <div><span class="d">Sat 17</span><span class="s">Dry, cold</span><span class="t">41&ndash;46&deg;F</span></div>
-      <div><span class="d">Sun 18</span><span class="s">Clear</span><span class="t">~54&deg;F</span></div>
+  <div class="wxdays" role="tablist" aria-label="Choose a day">
+      <button class="wxday on" data-day="d1" role="tab" aria-selected="true">
+        <div class="wxh"><span class="dn">Thursday</span><span class="dd">15 Oct</span></div>
+        <div class="wxb"><span class="bl">Mor</span><span class="ic">&#9729;</span><span class="tm">49&deg;</span><span class="pp">1%</span></div>
+        <div class="wxb"><span class="bl">Aft</span><span class="ic">&#9728;</span><span class="tm">60&deg;</span><span class="pp">2%</span></div>
+        <div class="wxb"><span class="bl">Eve</span><span class="ic">&#127783;</span><span class="tm">54&deg;</span><span class="pp">38%</span></div>
+      </button>
+      <button class="wxday" data-day="d2" role="tab" aria-selected="false">
+        <div class="wxh"><span class="dn">Friday</span><span class="dd">16 Oct</span></div>
+        <div class="wxb"><span class="bl">Mor</span><span class="ic">&#127783;</span><span class="tm">54&deg;</span><span class="pp">87%</span></div>
+        <div class="wxb"><span class="bl">Aft</span><span class="ic">&#127783;</span><span class="tm">62&deg;</span><span class="pp">87%</span></div>
+        <div class="wxb"><span class="bl">Eve</span><span class="ic">&#127783;</span><span class="tm">53&deg;</span><span class="pp">71%</span></div>
+      </button>
+      <button class="wxday" data-day="d3" role="tab" aria-selected="false">
+        <div class="wxh"><span class="dn">Saturday</span><span class="dd">17 Oct</span></div>
+        <div class="wxb"><span class="bl">Mor</span><span class="ic">&#9925;</span><span class="tm">38&deg;</span><span class="pp">28%</span></div>
+        <div class="wxb"><span class="bl">Aft</span><span class="ic">&#9728;</span><span class="tm">46&deg;</span><span class="pp">13%</span></div>
+        <div class="wxb"><span class="bl">Eve</span><span class="ic">&#9925;</span><span class="tm">41&deg;</span><span class="pp">8%</span></div>
+      </button>
+      <button class="wxday" data-day="d4" role="tab" aria-selected="false">
+        <div class="wxh"><span class="dn">Sunday</span><span class="dd">18 Oct</span></div>
+        <div class="wxb"><span class="bl">Mor</span><span class="ic">&#9728;</span><span class="tm">38&deg;</span><span class="pp">2%</span></div>
+        <div class="wxb"><span class="bl">Aft</span><span class="ic">&#9728;</span><span class="tm">56&deg;</span><span class="pp">2%</span></div>
+        <div class="wxb"><span class="bl">Eve</span><span class="ic">&#9925;</span><span class="tm">50&deg;</span><span class="pp">2%</span></div>
+      </button>
   </div>
-  <p class="wxnote">Forecast as of 12 October.</p>
+  <p class="wxnote">Hourly forecast from the National Weather Service, issued 12 October. Temperatures are block averages; percentages are the highest chance of rain in that block.</p>
 
-  <ol class="sched">
-      <li class="dayhead"><span class="d">Day 1 &middot; Thursday, 15 October &middot; EWR &rarr; Owego &rarr; Hammondsport</span></li>
-      <li class="move"><span class="t">9:00 AM</span><span class="w"><b>Car pickup at EWR</b><span>Head west on I-80 toward NY-17.</span></span></li>
-      <li><span class="t">12:00 PM</span><span class="w"><b>Owego &mdash; Carol&#39;s Coffee &amp; Art Bar</b><span>177 Front St, Owego, NY. Coffee and a pastry, or lunch at The Owego Kitchen.</span></span></li>
-      <li><span class="t">12:45 PM</span><span class="w"><b>Stroll Front Street</b><span>Riverside 1880s storefronts, shops, and the bookshop.</span></span></li>
-      <li class="move"><span class="t">2:00 PM</span><span class="w"><b>Depart Owego</b><span>About 80 minutes to Hammondsport.</span></span></li>
-      <li><span class="t">3:30 PM</span><span class="w"><b>Check in at JSHubb Guest House</b><span>Unpack and rest. Hammondsport Grocery (22 Shethar St) for basics.</span></span></li>
-      <li class="star"><span class="t">7:00 PM</span><span class="w"><b>&#11088; Dinner at Timber Stone Grill</b><span>70 Shethar St, Hammondsport. Call 607-224-0006 to confirm the reservation.</span></span></li>
-      <li class="dayhead"><span class="d">Day 2 &middot; Friday, 16 October &middot; Hammondsport</span></li>
-      <li><span class="t">Morning</span><span class="w"><b>Slow morning at the lodge</b><span>Rain likely, ~58&deg;F. No alarm.</span></span></li>
-      <li><span class="t">11:00 AM</span><span class="w"><b>Coffee and the village square</b><span>Keuka Bakery or a caf&eacute;, then a short walk.</span></span></li>
-      <li class="star"><span class="t">1:30 PM</span><span class="w"><b>&#11088; Dr. Konstantin Frank tasting</b><span>9749 Middle Rd, Hammondsport. Reserve the seated lake-view tasting.</span></span></li>
-      <li><span class="t">4:00 PM</span><span class="w"><b>Downtime at the lodge</b><span>Nap, read, or a lakefront walk if the rain eases.</span></span></li>
-      <li><span class="t">7:00 PM</span><span class="w"><b>Casual dinner in the village</b><span>The Park Inn, Snug Harbor, or Wise Guys Pizza. Check hours.</span></span></li>
-      <li class="dayhead"><span class="d">Day 3 &middot; Saturday, 17 October &middot; Niagara Falls</span></li>
-      <li class="move"><span class="t">8:15 AM</span><span class="w"><b>Depart Hammondsport</b><span>~45&deg;F. Pack dry clothes, wet-proof shoes, and a towel.</span></span></li>
-      <li><span class="t">9:30 AM</span><span class="w"><b>Letchworth State Park overlooks</b><span>Optional. About an hour, leaving before the midday crowds.</span></span></li>
-      <li><span class="t">12:15 PM</span><span class="w"><b>Lunch at Rainforest Cafe</b><span>300 3rd St, Niagara Falls, NY (inside the Sheraton). Restaurant parking is free.</span></span></li>
-      <li class="move"><span class="t">1:15 PM</span><span class="w"><b>Park at Lot 1, Prospect Point</b><span>333 Prospect St. $10 for the day. Keep the receipt. If full, use Lot 2 or Lot 3.</span></span></li>
-      <li><span class="t">1:20 PM</span><span class="w"><b>Buy Cave of the Winds tickets</b><span>At the Welcome Center, next to Lot 1. Timed tickets, in person only, $23 per adult.</span></span></li>
-      <li class="star"><span class="t">1:45 PM</span><span class="w"><b>&#11088; Cave of the Winds</b><span>Walk to Goat Island (10 Goat Island Loop Rd). Last tickets sold at 4:15 PM.</span></span></li>
-      <li class="star"><span class="t">3:15 PM</span><span class="w"><b>&#11088; Maid of the Mist</b><span>Next to Lot 1. Buy online ahead ($30.25) to skip the ticket window. First-come boarding. Runs until 5 PM.</span></span></li>
-      <li><span class="t">4:30 PM</span><span class="w"><b>Change clothes at the car</b><span>Get dry and warm.</span></span></li>
-      <li><span class="t">5:00 PM</span><span class="w"><b>Dinner at The Griffon Gastropub</b><span>2470 Military Rd, Niagara Falls, NY. About 12 min drive. Book on OpenTable.</span></span></li>
-      <li class="move"><span class="t">6:30 PM</span><span class="w"><b>Drive back to Hammondsport</b><span>About 2.5&ndash;2.75 hours. Back around 9:15 PM.</span></span></li>
-      <li class="dayhead"><span class="d">Day 4 &middot; Sunday, 18 October &middot; Home</span></li>
-      <li><span class="t">9:30 AM</span><span class="w"><b>Slow breakfast</b><span>Sunny, ~54&deg;F. Coffee by the lake, last village stroll.</span></span></li>
-      <li class="move"><span class="t">11:30 AM</span><span class="w"><b>Check out and depart</b><span>South via Binghamton onto I-81.</span></span></li>
-      <li><span class="t">2:00 PM</span><span class="w"><b>Lunch option A &mdash; Bingham&#39;s Family Restaurant</b><span>Kingsley, PA, right off I-81 Exit 211. Diner classics and famous pies.</span></span></li>
-      <li><span class="t">2:30 PM</span><span class="w"><b>Lunch option B &mdash; Colarusso&#39;s Coal Fired Pizza</b><span>Main Street, Dickson City, PA. About 30 min past Bingham&#39;s.</span></span></li>
-      <li class="move"><span class="t">4:45 PM</span><span class="w"><b>Refuel near EWR</b><span>Top off the tank before the return.</span></span></li>
-      <li class="move"><span class="t">5:15 PM</span><span class="w"><b>Return car at EWR</b><span>Then head home and order Instacart.</span></span></li>
-  </ol>
-
-  <div class="sidenote"><b>Owego snack alternatives.</b> The Owego Kitchen (7am&ndash;4pm,
-  Mon&ndash;Sat), Roasted Coffee Bar, Confection Connection at 59 North Ave.</div>
-
-  <div class="sidenote"><b>Friday backups.</b> Winery: Heron Hill Winery, 9249 County Rte 76 &mdash;
-  indoor tasting room with lake views. Groceries: Hammondsport Grocery at 22 Shethar St in the
-  village, Tops in Bath (~15 min), or Wegmans at 360 Pulteney St, Corning.</div>
-
-  <div class="sidenote"><b>Sunday lunch.</b> Pick one, or grab pie to go at Bingham&#39;s and eat
-  at Colarusso&#39;s. Sunday hours for both are unconfirmed &mdash; check before leaving.
-  Colarusso&#39;s has moved to a new Main Street location, so use the current address.</div>
-
-  <h4 class="todohead"><span class="cnum">&#128663;</span>Niagara parking</h4>
-  <div class="tablewrap">
-    <table class="costs">
-      <thead><tr><th>Lot</th><th>Address</th><th>Best for</th><th>Fee</th></tr></thead>
-      <tbody>
+  <div class="dayplans">
+    <div class="dayplan on" id="plan-d1">
+      <ol class="sched">
+        <li class="move"><span class="t">9:00 AM</span><span class="w"><b>Car pickup at EWR</b><span>Head west on I-80 toward NY-17.</span></span></li>
+        <li><span class="t">12:00 PM</span><span class="w"><b>Owego &mdash; Carol&#39;s Coffee &amp; Art Bar</b><span>177 Front St, Owego, NY. Coffee and a pastry, or lunch at The Owego Kitchen.</span></span></li>
+        <li><span class="t">12:45 PM</span><span class="w"><b>Stroll Front Street</b><span>Riverside 1880s storefronts, shops, and the bookshop.</span></span></li>
+        <li class="move"><span class="t">2:00 PM</span><span class="w"><b>Depart Owego</b><span>About 80 minutes to Hammondsport.</span></span></li>
+        <li><span class="t">3:30 PM</span><span class="w"><b>Check in at JS Hubbs Guest House</b><span>Unpack and rest. Hammondsport Grocery (22 Shethar St) for basics.</span></span></li>
+        <li class="star"><span class="t">7:00 PM</span><span class="w"><b>&#11088; Dinner at Timber Stone Grill</b><span>70 Shethar St. Call 607-224-0006 to confirm the reservation.</span></span></li>
+      </ol>
+      <div class="sidenote"><b>Owego alternatives.</b> The Owego Kitchen (7am&ndash;4pm, Mon&ndash;Sat), Roasted Coffee Bar, Confection Connection at 59 North Ave.</div>
+    </div>
+    <div class="dayplan" id="plan-d2">
+      <ol class="sched">
+        <li><span class="t">Morning</span><span class="w"><b>Slow morning at the lodge</b><span>No alarm. It will be raining.</span></span></li>
+        <li><span class="t">11:00 AM</span><span class="w"><b>Coffee and the village square</b><span>Keuka Bakery or a caf&eacute;, then a short walk.</span></span></li>
+        <li class="star"><span class="t">1:30 PM</span><span class="w"><b>&#11088; Dr. Konstantin Frank tasting</b><span>9749 Middle Rd. Reserve the seated lake-view tasting.</span></span></li>
+        <li><span class="t">4:00 PM</span><span class="w"><b>Downtime at the lodge</b><span>Nap, read, or a lakefront walk if the rain eases.</span></span></li>
+        <li><span class="t">7:00 PM</span><span class="w"><b>Casual dinner in the village</b><span>The Park Inn, Snug Harbor, or Wise Guys Pizza. Check hours.</span></span></li>
+      </ol>
+      <div class="sidenote"><b>Backups for a wet day.</b> Winery: Heron Hill, 9249 County Rte 76 &mdash; indoor tasting room with lake views. Groceries: Hammondsport Grocery at 22 Shethar St, Tops in Bath (~15 min), or Wegmans at 360 Pulteney St, Corning. The Corning Museum of Glass is 30 minutes away and is the best wet-weather option in range.</div>
+    </div>
+    <div class="dayplan" id="plan-d3">
+      <p class="atfalls"><b>At the falls:</b> morning 39&deg;, 17% rain &middot; afternoon 48&deg;, 9% rain &middot; evening 45&deg;, 4% rain</p>
+      <ol class="sched">
+        <li class="move"><span class="t">8:15 AM</span><span class="w"><b>Depart Hammondsport</b><span>Pack dry clothes, wet-proof shoes, and a towel.</span></span></li>
+        <li><span class="t">9:30 AM</span><span class="w"><b>Letchworth State Park overlooks</b><span>Optional. About an hour, leaving before the midday crowds.</span></span></li>
+        <li><span class="t">12:15 PM</span><span class="w"><b>Lunch at Rainforest Cafe</b><span>300 3rd St, Niagara Falls (inside the Sheraton). Restaurant parking is free.</span></span></li>
+        <li class="move"><span class="t">1:15 PM</span><span class="w"><b>Park at Lot 1, Prospect Point</b><span>333 Prospect St. $10 for the day. Keep the receipt. If full, use Lot 2 or Lot 3.</span></span></li>
+        <li><span class="t">1:20 PM</span><span class="w"><b>Buy Cave of the Winds tickets</b><span>At the Welcome Center, next to Lot 1. Timed tickets, in person only, $23 per adult.</span></span></li>
+        <li class="star"><span class="t">1:45 PM</span><span class="w"><b>&#11088; Cave of the Winds</b><span>Walk to Goat Island (10 Goat Island Loop Rd). Last tickets sold at 4:15 PM.</span></span></li>
+        <li class="star"><span class="t">3:15 PM</span><span class="w"><b>&#11088; Maid of the Mist</b><span>Next to Lot 1. Buy online ahead ($30.25). First-come boarding. Runs until 5 PM.</span></span></li>
+        <li><span class="t">4:30 PM</span><span class="w"><b>Change clothes at the car</b><span>Get dry and warm.</span></span></li>
+        <li><span class="t">5:00 PM</span><span class="w"><b>Dinner at The Griffon Gastropub</b><span>2470 Military Rd. About 12 min drive. Book on OpenTable.</span></span></li>
+        <li class="move"><span class="t">6:30 PM</span><span class="w"><b>Drive back to Hammondsport</b><span>About 2.5&ndash;2.75 hours. Back around 9:15 PM.</span></span></li>
+      </ol>
+      <h5 class="daysub">Parking</h5>
+      <div class="tablewrap">
+        <table class="costs">
+          <thead><tr><th>Lot</th><th>Address</th><th>Best for</th><th>Fee</th></tr></thead>
+          <tbody>
           <tr><td class="opt">Lot 1</td><td>333 Prospect St</td><td>Welcome Center, Maid of the Mist</td><td>$10/day</td></tr>
           <tr><td class="opt">Lot 2</td><td>15 Goat Island Loop Rd</td><td>Cave of the Winds</td><td>$10/day</td></tr>
           <tr><td class="opt">Lot 3</td><td>50 Goat Island Rd</td><td>Goat Island / Three Sisters Islands</td><td>Free (Sep 8 &ndash; May 21)</td></tr>
-      </tbody>
-    </table>
+          </tbody>
+        </table>
+      </div>
+      <p class="tblnote">Lots fill early at weekends. If Lot 1 is full, go straight to Lot 2 or 3. Keep the receipt for same-day re-entry.</p>
+      <h5 class="daysub">Tickets</h5>
+      <div class="tablewrap">
+        <table class="costs">
+          <thead><tr><th>Attraction</th><th>Where to buy</th><th>Advance?</th><th>Adult</th><th>Hours</th></tr></thead>
+          <tbody>
+          <tr><td class="opt">Cave of the Winds</td><td>Welcome Center or Goat Island</td><td>In person only, not online. Timed entry.</td><td>$23</td><td>9am &ndash; last ticket 4:15pm</td></tr>
+          <tr><td class="opt">Maid of the Mist</td><td>Online or ticket office</td><td>Optional. Online tickets valid any day.</td><td>$30.25</td><td>9am&ndash;5pm (to Nov 8)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="tblnote">Cave of the Winds no longer provides sandals &mdash; wear shoes you do not mind soaking. Maid of the Mist boarding is first come, first served even with an online ticket.</p>
+    </div>
+    <div class="dayplan" id="plan-d4">
+      <ol class="sched">
+        <li><span class="t">9:30 AM</span><span class="w"><b>Slow breakfast</b><span>Coffee by the lake, last village stroll.</span></span></li>
+        <li class="move"><span class="t">11:30 AM</span><span class="w"><b>Check out and depart</b><span>South via Binghamton onto I-81.</span></span></li>
+        <li><span class="t">2:00 PM</span><span class="w"><b>Lunch option A &mdash; Bingham&#39;s Family Restaurant</b><span>Kingsley, PA, right off I-81 Exit 211. Diner classics and famous pies.</span></span></li>
+        <li><span class="t">2:30 PM</span><span class="w"><b>Lunch option B &mdash; Colarusso&#39;s Coal Fired Pizza</b><span>Main Street, Dickson City, PA. About 30 min past Bingham&#39;s.</span></span></li>
+        <li class="move"><span class="t">4:45 PM</span><span class="w"><b>Refuel near EWR</b><span>Top off the tank before the return.</span></span></li>
+        <li class="move"><span class="t">5:15 PM</span><span class="w"><b>Return car at EWR</b><span>Then head home and order Instacart.</span></span></li>
+      </ol>
+      <div class="sidenote"><b>Sunday lunch.</b> Pick one, or grab pie to go at Bingham&#39;s and eat at Colarusso&#39;s. Sunday hours for both are unconfirmed. Colarusso&#39;s has moved to a new Main Street location, so use the current address.</div>
+    </div>
   </div>
-  <p class="tblnote">Lots fill early at weekends. If Lot 1 is full, go straight to Lot 2 or 3.
-  Keep the receipt for same-day re-entry.</p>
-
-  <h4 class="todohead"><span class="cnum">&#127915;</span>Niagara tickets</h4>
-  <div class="tablewrap">
-    <table class="costs">
-      <thead><tr><th>Attraction</th><th>Where to buy</th><th>Advance?</th><th>Adult</th><th>Hours</th></tr></thead>
-      <tbody>
-          <tr><td class="opt">Cave of the Winds</td><td>Welcome Center or Cave of the Winds (Goat Island)</td><td>No &mdash; in person only, not sold online. Timed entry.</td><td>$23</td><td>9am &ndash; last ticket 4:15pm (Oct 12&ndash;18)</td></tr>
-          <tr><td class="opt">Maid of the Mist</td><td>Online or ticket office</td><td>Optional. Online tickets valid any day of the season.</td><td>$30.25</td><td>9am&ndash;5pm daily (Sep 28 &ndash; Nov 8)</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="tblnote">Cave of the Winds no longer provides sandals &mdash; wear shoes you do not
-  mind getting wet. Maid of the Mist boarding is first come, first served even with a ticket
-  bought online.</p>
 
   <h4 class="todohead"><span class="cnum">&#127890;</span>Packing &mdash; Saturday is the cold one</h4>
-  <p class="catnote">Saturday sits at 41&ndash;46&deg;F and both attractions soak you. Everything
-  below is aimed at that day; the rest of the trip is mild.</p>
+  <p class="catnote">Saturday runs 38&ndash;46&deg;F with a steady wind, and both attractions soak
+  you. Everything below is aimed at that day; the rest of the trip is mild.</p>
   <div class="packgrid">
     <div class="packcard">
       <h5>&#127754; For the falls themselves</h5>
       <ul>
-        <li>A warm layer <b>under</b> the poncho &mdash; they are thin, and 45&deg;F spray is colder than it sounds</li>
+        <li>A warm layer <b>under</b> the poncho &mdash; they are thin, and spray at 46&deg;F is colder than it sounds</li>
         <li>Shoes you do not mind soaking &mdash; Cave of the Winds <b>no longer provides sandals</b></li>
         <li>A full change of dry clothes, left in the car</li>
         <li>Two pairs of spare socks</li>
@@ -228,7 +191,7 @@
     <div class="packcard">
       <h5>&#129507; Warm layers for Saturday</h5>
       <ul>
-        <li>Proper warm jacket &mdash; 41&ndash;46&deg;F with wind coming off the gorge</li>
+        <li>Proper warm jacket &mdash; it sits at 38&ndash;46&deg;F all day with a 16&ndash;17 mph wind</li>
         <li>Fleece or sweater to layer</li>
         <li>Hat and gloves &mdash; the spray makes hands cold fast</li>
         <li>Scarf or neck warmer</li>
@@ -730,235 +693,35 @@
 
 <div class="version vstay">
 <div class="tripbody">
-  <div class="hotels">
-    <h4>Hotel options by region</h4>
-    <p class="lede2">Every quote you gathered, in one table. Click any column heading to sort, or
-    filter by town. Euro prices are converted at roughly 1.15 &mdash; treat the dollar figures as
-    approximate, since the rate on the day and any foreign-transaction fee will move them.</p>
-
-    <div class="datewarn"><b>Most of these now match the trip.</b> With the dates moved to
-    15&ndash;18 October, the bulk of these quotes line up &mdash; the Hammondsport set especially.
-    The exceptions are the 16&ndash;19 October quotes, which are a day out, and two 9&ndash;12
-    October rates left from the earlier plan. The 41 Lakefront appears twice for that reason:
-    $900 on the 9th against $1,288 on the 15th. Sort by date before comparing on price.</div>
-
-    <div class="picks">
-      <h5>Your top picks</h5>
-      <ol>
-        <li><span class="m">&#129351;</span><div><b>Watkins Glen &mdash; VRBO 7080117 &middot; $782.88</b>
-          <span>Potentially the best value, and the first one to investigate. Town, Seneca Lake,
-          the state park, wineries and boating all concentrated in one place, at $261 a night
-          against $297&ndash;314 for the other Watkins Glen options. Check the reviews and the
-          exact location before anything else.</span></div></li>
-        <li><span class="m">&#129352;</span><div><b>Hammondsport &mdash; JS Hubbs Guest House &middot; $945.44</b>
-          <span>Your pick. A guest-house suite on Keuka Lake, quoted at $945.44 &mdash; about
-          &euro;813.91. Two things to check: the dates are 16&ndash;19 October, not 15&ndash;18
-          like the rest of the Hammondsport set, and it is the third dearest of that group.</span></div></li>
-        <li><span class="m">&#129353;</span><div><b>The Franklin &mdash; $749.10</b>
-          <span>The best inn option: three nights with breakfast, a queen, a fireplace and a
-          proper bathroom. You are paying for the lodging experience rather than a lake house,
-          which is fine if you are out exploring all day. Better than an $860&ndash;900 generic
-          hotel.</span></div></li>
-        <li><span class="m">4</span><div><b>Canandaigua &mdash; VRBO 4654451 &middot; $862</b>
-          <span>The one if Canandaigua becomes the base, and stronger still if it is walkable to
-          the lake and downtown. That matches what you actually want: hiking, walking the
-          shoreline, jet ski, a lake cruise, and a historic little city to wander.</span></div></li>
-        <li><span class="m">5</span><div><b>Watkins Glen &mdash; 304 3rd St, Airbnb &middot; $890.40</b>
-          <span>Better than the $942.40 VRBO for what looks like the same flat &mdash; $52 less at
-          the same address. Only worth the premium over the $782.88 option if it is materially
-          nicer.</span></div></li>
-      </ol>
-    </div>
-
-    <div class="filters" role="group" aria-label="Filter by town">
-      <button class="fbtn on" data-region="all">All</button>
-      <button class="fbtn" data-region="picks">&#11088; Top picks</button>
-      <button class="fbtn" data-region="Canandaigua">Canandaigua</button>
-      <button class="fbtn" data-region="Geneva">Geneva</button>
-      <button class="fbtn" data-region="Hammondsport">Hammondsport</button>
-      <button class="fbtn" data-region="Watkins Glen">Watkins Glen</button>
-      <button class="fbtn" data-region="Seneca Falls">Seneca Falls</button>
-    </div>
-
-    <div class="tablewrap">
-      <table class="costs hoteltable">
-        <thead><tr>
-          <th class="sortable" data-type="text">Town</th>
-          <th class="sortable" data-type="text">Property</th>
-          <th class="sortable" data-type="text" aria-sort="ascending">Dates</th>
-          <th class="sortable" data-type="num">Total</th>
-          <th class="sortable" data-type="num">Per night</th>
-        </tr></thead>
-        <tbody>
-        <tr data-region="Canandaigua" data-pick="3" class="pick">
-          <td class="reg"><span class="pill canandaigua">Canandaigua</span></td>
-          <td class="opt"><a href="https://via.eviivo.com/en-en/Google/b14424?startdate=2026-10-15&amp;enddate=2026-10-18&amp;adults1=2&amp;children1=0&amp;currency=USD&amp;roomtypeid=125160&amp;rateplanid=315758" target="_blank" rel="noopener">The Franklin &mdash; Comfort Ensuite &rarr;</a><span class="pickchip">🥉 Best inn</span><span class="note">$660 + $89.10 fees. Breakfast included, queen, electric fireplace.</span></td>
-          <td data-sort="2026-10-15">15&ndash;18 Oct</td>
-          <td data-sort="749.10">$749.10</td>
-          <td data-sort="249.70">$250</td>
-        </tr>
-        <tr data-region="Canandaigua">
-          <td class="reg"><span class="pill canandaigua">Canandaigua</span></td>
-          <td class="opt"><a href="https://hotel.check24.de/search/B%26B%20at%20Oliver%20Phelps-9715839/2026-10-16/2026-10-19/%5BA%7CA%5D/hotel.html" target="_blank" rel="noopener">B&amp;B at Oliver Phelps &rarr;</a><span class="note">Central Canandaigua, 5 min from the lake, near Granger Homestead and Sonnenberg.</span></td>
-          <td data-sort="2026-10-16">16&ndash;19 Oct</td>
-          <td data-sort="741.37">&euro;644.67<span class="usd">~$741</span></td>
-          <td data-sort="247.12">$247</td>
-        </tr>
-        <tr data-region="Canandaigua" data-pick="4" class="pick">
-          <td class="reg"><span class="pill canandaigua">Canandaigua</span></td>
-          <td class="opt"><a href="https://www.vrbo.com/4654451?chkin=2026-10-15&amp;chkout=2026-10-18&amp;adults=2" target="_blank" rel="noopener">VRBO 4654451 &rarr;</a><span class="pickchip"> Best if Canandaigua</span><span class="note">$287/night, all fees included.</span></td>
-          <td data-sort="2026-10-15">15&ndash;18 Oct</td>
-          <td data-sort="862.00">$862.00</td>
-          <td data-sort="287.33">$287</td>
-        </tr>
-        <tr data-region="Geneva">
-          <td class="reg"><span class="pill geneva">Geneva</span></td>
-          <td class="opt"><a href="https://hotel.check24.de/search/Geneva%20On%20The%20Lake%20Boutique%20Resort%20Hotel-9119718/2026-10-16/2026-10-19/%5BA%7CA%5D/hotel.html" target="_blank" rel="noopener">Geneva On The Lake &mdash; Standard Queen &rarr;</a><span class="note">24 m&sup2;, breakfast included. Non-refundable, pay before arrival.</span></td>
-          <td data-sort="2026-10-16">16&ndash;19 Oct</td>
-          <td data-sort="741.75">&euro;645.00<span class="usd">~$742</span></td>
-          <td data-sort="247.25">$247</td>
-        </tr>
-        <tr data-region="Geneva">
-          <td class="reg"><span class="pill geneva">Geneva</span></td>
-          <td class="opt"><a href="https://hotel.check24.de/search/Geneva%20On%20The%20Lake%20Boutique%20Resort%20Hotel-9119718/2026-10-16/2026-10-19/%5BA%7CA%5D/hotel.html" target="_blank" rel="noopener">Geneva On The Lake &mdash; Deluxe Suite &rarr;</a><span class="note">45 m&sup2; one-bedroom suite, hot tub. Free cancellation to 2 Oct, pay later.</span></td>
-          <td data-sort="2026-10-16">16&ndash;19 Oct</td>
-          <td data-sort="1002.80">&euro;872.00<span class="usd">~$1,003</span></td>
-          <td data-sort="334.27">$334</td>
-        </tr>
-        <tr data-region="Geneva">
-          <td class="reg"><span class="pill geneva">Geneva</span></td>
-          <td class="opt"><a href="https://ferienwohnung.check24.de/search/The%20Geneva%20Getaway-%20remodeled%20apartment%20walking%20distance%20from%20downtown%20Geneva-27547158/2026-10-16/2026-10-19/%5BA%7CA%5D/homes.html" target="_blank" rel="noopener">The Geneva Getaway &rarr;</a><span class="note">70 m&sup2; apartment, 10 min walk to South Main St and Seneca Lake. $1,500 deposit. Free cancellation to 2 Oct.</span></td>
-          <td data-sort="2026-10-16">16&ndash;19 Oct</td>
-          <td data-sort="728.75">&euro;633.70<span class="usd">~$729</span></td>
-          <td data-sort="242.92">$243</td>
-        </tr>
-        <tr data-region="Geneva">
-          <td class="reg"><span class="pill geneva">Geneva</span></td>
-          <td class="opt"><a href="https://www.wyndhamhotels.com/trademark/geneva-new-york/41-lakefront-hotel-trademark-collection/rooms-rates?brand_id=TQ&amp;checkInDate=10/9/2026&amp;checkOutDate=10/12/2026&amp;adults=2&amp;rooms=1&amp;hotel_id=07447" target="_blank" rel="noopener">41 Lakefront, Trademark by Wyndham &rarr;</a><span class="note">$793.02 + $107.05 tax. Two double beds, city view. Pay at hotel.</span></td>
-          <td data-sort="2026-10-09">9&ndash;12 Oct</td>
-          <td data-sort="900.07">$900.07</td>
-          <td data-sort="300.02">$300</td>
-        </tr>
-        <tr data-region="Geneva">
-          <td class="reg"><span class="pill geneva">Geneva</span></td>
-          <td class="opt"><a href="https://linkcenterus.derbysoftca.com/dplatform-linkcenter/booking.htm?hotelCode=WYNDHAM-90687&amp;checkInDate=2026-10-15&amp;checkOutDate=2026-10-18" target="_blank" rel="noopener">41 Lakefront, Trademark by Wyndham &rarr;</a><span class="note">Same hotel, the later weekend. Notably dearer than the 9&ndash;12 rate.</span></td>
-          <td data-sort="2026-10-15">15&ndash;18 Oct</td>
-          <td data-sort="1288.19">$1,288.19</td>
-          <td data-sort="429.40">$429</td>
-        </tr>
-        <tr data-region="Canandaigua">
-          <td class="reg"><span class="pill canandaigua">Canandaigua</span></td>
-          <td class="opt"><a href="https://ferienwohnung.check24.de/search/The%20Main%20Street%20Retreat-35774132/2026-10-16/2026-10-19/%5BA%7CA%5D/homes.html" target="_blank" rel="noopener">The Main Street Retreat &rarr;</a><span class="note">Free cancellation to 2 Oct, booked through FeWo-direkt.</span></td>
-          <td data-sort="2026-10-16">16&ndash;19 Oct</td>
-          <td data-sort="954.35">&euro;829.87<span class="usd">~$954</span></td>
-          <td data-sort="318.12">$318</td>
-        </tr>
-        <tr data-region="Watkins Glen" data-pick="1" class="pick">
-          <td class="reg"><span class="pill watkins">Watkins Glen</span></td>
-          <td class="opt"><a href="https://www.vrbo.com/7080117ha?chkin=2026-10-15&amp;chkout=2026-10-18&amp;adults=2" target="_blank" rel="noopener">VRBO 7080117 &rarr;</a><span class="pickchip">🥇 Best value</span><span class="note">$233/night + $83.88 tax. Cheapest of the Watkins Glen set.</span></td>
-          <td data-sort="2026-10-15">15&ndash;18 Oct</td>
-          <td data-sort="782.88">$782.88</td>
-          <td data-sort="260.96">$261</td>
-        </tr>
-        <tr data-region="Watkins Glen" data-pick="5" class="pick">
-          <td class="reg"><span class="pill watkins">Watkins Glen</span></td>
-          <td class="opt"><a href="https://www.airbnb.com/rooms/18776389?adults=2&amp;check_in=2026-10-15&amp;check_out=2026-10-18" target="_blank" rel="noopener">Airbnb 18776389 &mdash; 304 3rd St &rarr;</a><span class="pickchip"> Same flat, $52 less</span><span class="note">4.69 from 127 reviews. Free cancellation within 24 h. Same address as the $942 VRBO below.</span></td>
-          <td data-sort="2026-10-15">15&ndash;18 Oct</td>
-          <td data-sort="890.40">$890.40</td>
-          <td data-sort="296.80">$297</td>
-        </tr>
-        <tr data-region="Watkins Glen">
-          <td class="reg"><span class="pill watkins">Watkins Glen</span></td>
-          <td class="opt"><a href="https://www.vrbo.com/4219762ha?chkin=2026-10-15&amp;chkout=2026-10-18&amp;adults=2" target="_blank" rel="noopener">VRBO 4219762 &rarr;</a><span class="note">$269.33/night + $96.96 tax.</span></td>
-          <td data-sort="2026-10-15">15&ndash;18 Oct</td>
-          <td data-sort="904.96">$904.96</td>
-          <td data-sort="301.65">$302</td>
-        </tr>
-        <tr data-region="Watkins Glen">
-          <td class="reg"><span class="pill watkins">Watkins Glen</span></td>
-          <td class="opt"><a href="https://www.vrbo.com/4575964ha?chkin=2026-10-15&amp;chkout=2026-10-18&amp;adults=2" target="_blank" rel="noopener">VRBO 4575964 &mdash; 304 3rd St &rarr;</a><span class="note">$300.67/night + $40.40 tax. Same address as the Airbnb above, $52 dearer.</span></td>
-          <td data-sort="2026-10-15">15&ndash;18 Oct</td>
-          <td data-sort="942.40">$942.40</td>
-          <td data-sort="314.13">$314</td>
-        </tr>
-        <tr data-region="Seneca Falls">
-          <td class="reg"><span class="pill seneca">Seneca Falls</span></td>
-          <td class="opt"><a href="https://www.expedia.com/Seneca-Falls-Hotels-The-Gould-Hotel.h2940042.Hotel-Information?chkin=2026-10-09&amp;chkout=2026-10-12" target="_blank" rel="noopener">The Gould Hotel &rarr;</a><span class="note">8.8/10 from 3 reviews. King, parking included. Non-refundable; +$88 to make it refundable.</span></td>
-          <td data-sort="2026-10-09">9&ndash;12 Oct</td>
-          <td data-sort="747.00">$747.00</td>
-          <td data-sort="249.00">$249</td>
-        </tr>
-        <tr data-region="Hammondsport">
-          <td class="reg"><span class="pill hammondsport">Hammondsport</span></td>
-          <td class="opt"><a href="https://www.airbnb.com/rooms/896348439825865861?adults=2&amp;check_in=2026-10-15&amp;check_out=2026-10-18" target="_blank" rel="noopener">Airbnb 896348439825865861 &rarr;</a><span class="note">Cheapest quote in the whole table.</span></td>
-          <td data-sort="2026-10-15">15&ndash;18 Oct</td>
-          <td data-sort="699.86">$699.86</td>
-          <td data-sort="233.29">$233</td>
-        </tr>
-        <tr data-region="Hammondsport">
-          <td class="reg"><span class="pill hammondsport">Hammondsport</span></td>
-          <td class="opt"><a href="https://www.vrbo.com/98304?chkin=2026-10-15&amp;chkout=2026-10-18&amp;adults=2" target="_blank" rel="noopener">Keuka Lake Escape For You &mdash; VRBO 98304 &rarr;</a><span class="note">Second cheapest overall.</span></td>
-          <td data-sort="2026-10-15">15&ndash;18 Oct</td>
-          <td data-sort="712.32">$712.32</td>
-          <td data-sort="237.44">$237</td>
-        </tr>
-        <tr data-region="Hammondsport">
-          <td class="reg"><span class="pill hammondsport">Hammondsport</span></td>
-          <td class="opt"><a href="https://www.vrbo.com/4471456?chkin=2026-10-15&amp;chkout=2026-10-18&amp;adults=2" target="_blank" rel="noopener">Finger Lakes wine country, Keuka Lake &mdash; VRBO 4471456 &rarr;</a><span class="note">$874 for three nights.</span></td>
-          <td data-sort="2026-10-15">15&ndash;18 Oct</td>
-          <td data-sort="874.00">$874.00</td>
-          <td data-sort="291.33">$291</td>
-        </tr>
-        <tr data-region="Hammondsport">
-          <td class="reg"><span class="pill hammondsport">Hammondsport</span></td>
-          <td class="opt"><a href="https://book.hammondsportlodging.com/listings/456138?city=Hammondsport&amp;start=2026-10-15&amp;end=2026-10-18&amp;numberOfGuests=2" target="_blank" rel="noopener">Hammondsport Lodging 456138 &rarr;</a><span class="note">$741.30 room + $50 cleaning + $94.95 tax + $14.24 channel fee. Booked direct.</span></td>
-          <td data-sort="2026-10-15">15&ndash;18 Oct</td>
-          <td data-sort="900.49">$900.49</td>
-          <td data-sort="300.16">$300</td>
-        </tr>
-        <tr data-region="Hammondsport" data-pick="2" class="pick">
-          <td class="reg"><span class="pill hammondsport">Hammondsport</span></td>
-          <td class="opt"><a href="https://ferienwohnung.check24.de/search/Junior%27s%20Suite%20at%20JS%20Hubbs%20Guest%20House-39093134/2026-10-16/2026-10-19/%5BA%7CA%5D/homes.html" target="_blank" rel="noopener">JS Hubbs Guest House &mdash; Junior&#39;s Suite &rarr;</a><span class="pickchip">🥈 Your pick</span><span class="note">Quoted $945.44, about &euro;813.91. Note the dates: 16&ndash;19 Oct, not 15&ndash;18 like the rest of Hammondsport.</span></td>
-          <td data-sort="2026-10-16">16&ndash;19 Oct</td>
-          <td data-sort="945.44">$945.44</td>
-          <td data-sort="315.15">$315</td>
-        </tr>
-        <tr data-region="Hammondsport">
-          <td class="reg"><span class="pill hammondsport">Hammondsport</span></td>
-          <td class="opt"><a href="https://www.airbnb.com/rooms/26948789?adults=2&amp;check_in=2026-10-15&amp;check_out=2026-10-18" target="_blank" rel="noopener">Airbnb 26948789 &rarr;</a><span class="note"></span></td>
-          <td data-sort="2026-10-15">15&ndash;18 Oct</td>
-          <td data-sort="984.48">$984.48</td>
-          <td data-sort="328.16">$328</td>
-        </tr>
-        <tr data-region="Hammondsport">
-          <td class="reg"><span class="pill hammondsport">Hammondsport</span></td>
-          <td class="opt"><a href="https://www.airbnb.com/rooms/1654311149830645884?adults=2&amp;check_in=2026-10-15&amp;check_out=2026-10-18" target="_blank" rel="noopener">Airbnb 1654311149830645884 &rarr;</a><span class="note"></span></td>
-          <td data-sort="2026-10-15">15&ndash;18 Oct</td>
-          <td data-sort="1005.76">$1,005.76</td>
-          <td data-sort="335.25">$335</td>
-        </tr>
-        <tr data-region="Hammondsport">
-          <td class="reg"><span class="pill hammondsport">Hammondsport</span></td>
-          <td class="opt"><a href="https://www.airbnb.com/rooms/1364667349547612767?adults=2&amp;check_in=2026-10-15&amp;check_out=2026-10-18" target="_blank" rel="noopener">Airbnb 1364667349547612767 &rarr;</a><span class="note"></span></td>
-          <td data-sort="2026-10-15">15&ndash;18 Oct</td>
-          <td data-sort="1014.72">$1,014.72</td>
-          <td data-sort="338.24">$338</td>
-        </tr>
-        <tr data-region="Hammondsport">
-          <td class="reg"><span class="pill hammondsport">Hammondsport</span></td>
-          <td class="opt"><a href="https://www.vrbo.com/845923?chkin=2026-10-15&amp;chkout=2026-10-18&amp;adults=2" target="_blank" rel="noopener">Waterfront Keuka Lake &mdash; VRBO 845923 &rarr;</a><span class="note">Boat slip, two balconies, third floor. Dearest of the Hammondsport set.</span></td>
-          <td data-sort="2026-10-15">15&ndash;18 Oct</td>
-          <td data-sort="1096.00">$1,096.00</td>
-          <td data-sort="365.33">$365</td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="tblnote">Three nights in every case, two adults. Totals are as quoted including
-    taxes and fees where the source showed them. Nothing here is booked.</p>
-
+  <div class="varhead">
+    <div class="vlab">Thursday 15 &rarr; Sunday 18 October &middot; three nights</div>
+    <h3>JS Hubbs Guest House</h3>
+    <p>Hammondsport, New York. Junior&#39;s Suite.</p>
   </div>
 
+  <div class="stays">
+    <div class="stayrow vt">
+      <span class="amt">$945.44</span>
+      <span class="rank">Booked</span>
+      <span class="per">about &euro;813.91 &middot; 3 nights</span>
+      <a href="https://ferienwohnung.check24.de/search/Junior%27s%20Suite%20at%20JS%20Hubbs%20Guest%20House-39093134/2026-10-16/2026-10-19/%5BA%7CA%5D/homes.html" target="_blank" rel="noopener">View the listing &rarr;</a>
+      <p class="staynote">The quote was priced for <b>16&ndash;19 October</b>, a day later than the
+      trip now runs. Worth checking the booking actually reads 15&ndash;18 before you set off.</p>
+    </div>
+    <p class="caveat"><b>Worth confirming before Thursday.</b> Check-in and check-out times, where
+    to park, whether there is a kitchen or fridge for the groceries, and how you get the key if you
+    arrive around 3:30 PM.</p>
+  </div>
+
+  <div class="addons">
+    <h4>Nearby, if you need it</h4>
+    <p>There is no full supermarket in the village.</p>
+    <ul>
+      <li>Hammondsport Grocery &mdash; 22 Shethar St, in the village</li>
+      <li>Tops &mdash; Bath, about 15 minutes</li>
+      <li>Wegmans &mdash; 360 Pulteney St, Corning, about 30 minutes</li>
+    </ul>
+  </div>
 </div>
 </div>
 
@@ -1901,59 +1664,6 @@
 
 </section>
 
-<!-- ============================= RENTAL ============================= -->
-<section class="view" id="view-car" role="tabpanel" aria-labelledby="nav-car" style="--accent:var(--routeA)">
-  <div class="leadin">
-    <h2>Rental car</h2>
-    <p>The pickup point sets the shape of the day. Newport is close by and costs nothing to
-    reach, but nothing opens before 7:30. The airport opens earlier and has far more cars, at
-    roughly $60 of round-trip rides.</p>
-  </div>
-  <div class="twocol">
-    <div class="panel pick">
-      <span class="badge rec">&#128736;&#65039; Simplest logistics</span>
-      <h3>&#128663; Newport rental</h3>
-      <p class="sub">Close by &middot; no ride needed</p>
-      <ul class="hours">
-        <li><span>SIXT</span><b>8:00 AM – 5:00 PM</b></li>
-        <li><span>Avis</span><b>7:30 AM – 5:00 PM</b></li>
-        <li><span>Budget</span><b>7:30 AM – 5:00 PM</b></li>
-        <li><span>Estimated rate</span><b>$109</b></li>
-      </ul>
-      <ul class="notes">
-        <li>No airport Uber or Lyft required — about $60 saved against the airport option.</li>
-        <li>The car itself costs more: $109 against roughly $47 at the airport, so the $60 of
-        rides very nearly cancels out. Treat the two as the same price and choose on time.</li>
-        <li>Earliest possible departure is roughly 7:40 AM, and only with Avis or Budget.</li>
-        <li>Smaller fleet, so book early for a specific class of car.</li>
-      </ul>
-      <div class="bestfor"><b>Best for Route A / New Hope.</b> The 7:30 pickup still lands you
-      in New Hope before the 9:30 rail bike slot. On Route B the later start is the binding
-      constraint — it is what forces the shortened plan.</div>
-    </div>
-    <div class="panel">
-      <span class="badge flex">&#9201;&#65039; More flexible</span>
-      <h3>&#9992;&#65039; Airport rental</h3>
-      <p class="sub">Newark &middot; ride each way</p>
-      <ul class="hours">
-        <li><span>Opening</span><b>~6:30 AM, some 24 h</b></li>
-        <li><span>Uber / Lyft each way</span><b>~$30</b></li>
-        <li><span>Round trip</span><b>~$60</b></li>
-        <li><span>Estimated rate</span><b>&euro;41 &middot; ~$47</b></li>
-      </ul>
-      <ul class="notes">
-        <li>Much wider selection of cars than the Newport counters.</li>
-        <li>An hour earlier on the road, which is what makes the full itineraries fit.</li>
-        <li>Adds two rides to the day, at each end.</li>
-        <li>Cheaper car (&euro;41, about $47) but roughly $60 of rides — about the same total
-        as Newport once both are counted.</li>
-      </ul>
-      <div class="bestfor"><b>Best for Route B / New Paltz.</b> The earlier start is what buys
-      room for the second orchard, the village, and the Walkway Over the Hudson.</div>
-    </div>
-  </div>
-</section>
-
 <footer>
 Drive times are estimates for a weekend morning departure and exclude traffic, tolls, and
 stops for gas.<br>
@@ -2005,8 +1715,8 @@ Maps are schematic: pin positions are geographically placed, road shapes are sim
 
 <script>
 (function(){
-  var views = {plan:'view-plan', car:'view-car', other:'view-other'};
-  var navs  = {plan:'nav-plan',  car:'nav-car',  other:'nav-other'};
+  var views = {plan:'view-plan', other:'view-other'};
+  var navs  = {plan:'nav-plan',  other:'nav-other'};
 
   function showView(key){
     Object.keys(views).forEach(function(k){
@@ -2037,7 +1747,8 @@ Maps are schematic: pin positions are geographically placed, road shapes are sim
   function viewOf(el){ return el.closest('.view'); }
 
   function openRoute(view, key, version){
-    view.querySelector('.chooser-wrap').style.display = 'none';
+    var wrap = view.querySelector('.chooser-wrap');
+    if (wrap) wrap.style.display = 'none';
     view.querySelectorAll('section.route').forEach(function(sec){
       sec.classList.toggle('on', sec.id === 'route-' + key);
     });
@@ -2047,7 +1758,9 @@ Maps are schematic: pin positions are geographically placed, road shapes are sim
   }
 
   function showChooser(view){
-    view.querySelector('.chooser-wrap').style.display = '';
+    var wrap = view.querySelector('.chooser-wrap');
+    if (!wrap) return;                       // a view with a single trip has no chooser
+    wrap.style.display = '';
     view.querySelectorAll('section.route').forEach(function(sec){ sec.classList.remove('on'); });
     window.scrollTo({top:0, behavior:'smooth'});
   }
@@ -2066,42 +1779,25 @@ Maps are schematic: pin positions are geographically placed, road shapes are sim
     });
   });
 
-  // start on the chooser in every view, with no route open
-  document.querySelectorAll('section.route').forEach(function(sec){ sec.classList.remove('on'); });
-
-  // hotel table: filter by town, sort by any column
-  document.querySelectorAll('.hoteltable').forEach(function(table){
-    var tbody = table.tBodies[0];
-    var rows  = [].slice.call(tbody.rows);
-    var panel = table.closest('.hotels');
-
-    function cellKey(row, i, type){
-      var cell = row.cells[i];
-      var raw  = cell.dataset.sort !== undefined ? cell.dataset.sort : cell.textContent.trim();
-      return type === 'num' ? parseFloat(raw) : raw.toLowerCase();
+  // views with a chooser start on it; a view holding a single trip opens straight into it
+  document.querySelectorAll('.view').forEach(function(view){
+    if (view.querySelector('.chooser-wrap')) {
+      view.querySelectorAll('section.route').forEach(function(sec){ sec.classList.remove('on'); });
     }
-    table.querySelectorAll('th.sortable').forEach(function(th, i){
-      th.addEventListener('click', function(){
-        var asc = th.getAttribute('aria-sort') !== 'ascending';
-        table.querySelectorAll('th').forEach(function(o){ o.removeAttribute('aria-sort'); });
-        th.setAttribute('aria-sort', asc ? 'ascending' : 'descending');
-        var type = th.dataset.type;
-        rows.slice().sort(function(a, b){
-          var x = cellKey(a, i, type), y = cellKey(b, i, type);
-          if (x < y) return asc ? -1 : 1;
-          if (x > y) return asc ? 1 : -1;
-          return 0;
-        }).forEach(function(r){ tbody.appendChild(r); });
-      });
-    });
+  });
 
-    panel.querySelectorAll('.fbtn').forEach(function(btn){
+  // the weather strip doubles as the day picker for the itinerary
+  document.querySelectorAll('.wxdays').forEach(function(strip){
+    var plans = strip.parentNode.querySelector('.dayplans');
+    strip.querySelectorAll('.wxday').forEach(function(btn){
       btn.addEventListener('click', function(){
-        panel.querySelectorAll('.fbtn').forEach(function(b){ b.classList.toggle('on', b === btn); });
-        var want = btn.dataset.region;
-        rows.forEach(function(r){
-          r.hidden = want === 'picks' ? !r.dataset.pick
-                   : want !== 'all' && r.dataset.region !== want;
+        strip.querySelectorAll('.wxday').forEach(function(b){
+          var on = b === btn;
+          b.classList.toggle('on', on);
+          b.setAttribute('aria-selected', String(on));
+        });
+        plans.querySelectorAll('.dayplan').forEach(function(p){
+          p.classList.toggle('on', p.id === 'plan-' + btn.dataset.day);
         });
       });
     });
